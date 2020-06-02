@@ -10,7 +10,8 @@
             height: 40px;
             font: bolder italic 20px '微软雅黑';}
         div{width: 300px;
-            color:violet;}
+            color:rgb(85, 75, 85);}
+        caption,td,th{font: bolder italic 25px '微软雅黑';}
     </style>
 </head>
 <body>
@@ -59,31 +60,185 @@
             <div>
                 <!--这是一段注释-->
             </div>
-        <!-- <li>无序列表
-            <ul type="circle">
-                <li>
-                    <span>type="circle"表示黑色圆心空</span>
-                </li>
-                <li>
-                    <p>type="disc"表示黑色实心空</p>
-                </li>
-                <li>
-                    <p>type="square"表示黑色实心方块</p>
-                </li>
-            </ul>
-        </li>
-
-        <li>有序列表
-            <ul>
-                <li>
-                    <span>type="a"表示序号为a，b，c</span>
-                </li>
-                <li>type="A"表示序号为A，B，C</li>
-                <li>type="1"表示序号为1，2，3</li>
-                <li>type="i"表示序号为i，ii，iii</li>
-                <li>type="I"表示序号为I，II，III</li>
-            </ul>
-        </li>
-    </ol> -->
+        <li>无序列表</li>
+            <div>
+                <ul type="circle">
+                    <li>type="circle"：定义序号为黑色圆心空</li>
+                </ul>
+                <ul type="disc">
+                    <li>type="disc"：定义序号为黑色实心空</li>
+                </ul>
+                <ul type="square">
+                    <li>type="square"：定义序号为黑色实心方块</li>
+                </ul>
+            </div>
+        <li>有序列表</li>
+            <div>
+                <ol type="a">
+                    <li>type="a"：定义序号为a，b，c</li>
+                </ol>
+                <ol type="A">
+                    <li>type="A"：定义序号为A，B，C</li>
+                </ol>
+                <ol type="1">
+                    <li>type="1"：定义序号为1，2，3</li>
+                </ol>
+                <ol type="i">
+                    <li>type="i"：定义序号为i，ii，iii</li>
+                </ol>
+                <ol type="I">
+                    <li>type="I"：定义序号为I，II，III</li>
+                </ol>
+            </div>
+        <li>自定义列表</li>
+            <div>
+                <dl>
+                    <dt>序号一
+                        <dd>内容一</dd>
+                    </dt>
+                    <dt>序号二
+                        <dd>内容二</dd>
+                    </dt>
+                </dl>
+            </div>
+        <li>嵌套列表</li>
+            <div>
+                <ul type="square">
+                    <li>四川省</li>
+                        <ol type="1">
+                            <li>成都</li>
+                            <li>巴中</li>
+                            <li>通江</li>
+                        </ol>
+                </ul>
+            </div>
+        <li>表格</li>
+            <div>
+                <table>
+                    <caption>表格标题</caption>
+                    <thead><!--表格头--->
+                        <tr>
+                            <th>表头一</th>
+                            <th>表头二</th>
+                            <th>表头三</th>
+                        </tr>
+                    </thead>
+                    <tbody><!--表格体-->
+                        <tr>
+                            <td>表格单元一</td>
+                            <td>表格单元二</td>
+                            <td>表格单元三</td>
+                        </tr>
+                    </tbody>
+                    <tfoot><!--表格尾--></tfoot>
+                </table>
+            </div>
+        <li>表格属性</li>
+            <div>
+                <ol type="A">
+                    <li>border="1"：定义表格边框（数字越大，边框的线条越粗）</li>
+                    <li>cellpadding="20"：定义单元格内的空间（数字越大，单元格内的空间越大）</li>
+                    <li>cellspacing="10"：定义单元格之间的空间（数字越大，单元格之间的空间越大）</li>
+                    <li>rowspan="2"：定义合并行（数字表示合并的行数）</li>
+                    <li>colspan="2"：定义合并列（数字表示合并的列数）</li>
+                    <li>align="left"：定义左右对齐方式（left_左，center_中，right_右）</li>
+                    <li>valign="bottom"：定义上下对齐方式（top_上，middle_中，bottom_下）</li>
+                </ol>
+                <p>实例</p>
+                <table border="3",cellpadding="200",cellspacing="200">
+                    <caption>表格标题</caption>
+                        <thead>
+                            <tr align="center">
+                                <th colspan="2">水果</th>
+                                <th>重量</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr valign="bottom">
+                                <td>橘子</td>
+                                <td>荔枝</td>
+                                <td rowspan="2">2斤</td>
+                            </tr>
+                            <tr>
+                                <td>香蕉</td>
+                                <td>葡萄</td>
+                            </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                </table>
+            </div>
+        <li>表单</li>
+            <div>
+                <ol type="A">
+                    <li>&lt;form&gt;&lt;/form&gt;定义表单最外层的容器</li>
+                    <li>action="url":定义表单提交的目标地址</li>
+                    <li>&lt;input&gt;定义输入框，根据不同的type属性，展示不同的控件</li>
+                        <ol type="1">
+                            <li>type="text"：定义一般文本输入框</li>
+                            <li>placeholder="text"：定义文本框中提示信息</li>
+                            <li>type="password"：定义密码输入框（输入内容以*号显示）</li>
+                            <li>type="checkbox"：定义复选框</li>
+                                <ul type="square">
+                                    <li>checked="checked"：定义默认勾选框</li>
+                                    <li>disabled="disabled"：定义锁定勾选框（锁定之后就不能再被选择）</li>
+                                    <li>&lt;label&gt;&lt;/label&gt;定义鼠标点击范围（点击文字也能勾选）</li>
+                                </ul>
+                            <li>type="radio"：定义单选框</li>
+                            <li>type="file"：定义上传文件</li>
+                                <ul type="square">
+                                    <li>multiple="multiple"：定义选择多个文件</li>
+                                </ul>
+                            <li>&lt;textarea&nbsp;cols="number"&nbsp;rows="number"&gt;&lt;/textarea&gt;定义多行文本框(cols/rows为文本框的列和行)</li>
+                            <li>type="submit"：定义提交表单的按钮</li>
+                                <ul type="square">
+                                    <li>value="文字"定义修改按钮文字</li>
+                                </ul>
+                            <li>type="reset"：定义重置表单的按钮</li>
+                                <ul type="square">
+                                    <li>value="text"：定义修改按钮文字</li>
+                                </ul>
+                        </ol>
+                    <p>实例</p>
+                    <form action="https://www.baidu.com">
+                        <h2>输入框：</h2>
+                        <input type="text" placeholder="请输入账号">
+                        <h2>密码框：</h2>
+                        <input type="password" placeholder="请输入密码">
+                        <h2>复选框：</h2>
+                        <input type="checkbox" checked="checked">苹果
+                        <input type="checkbox" checked="checked">香蕉
+                        <input type="checkbox" disabled="disabled">荔枝
+                        <h2>单选框：</h2>
+                        <input type="radio" name="sex">男
+                        <input type="radio" name="sex">女
+                        <h2>上传文件：</h2>
+                        <input type="file" multiple="multiple">
+                        <h2>备注</h2>
+                        <textarea cols="20" rows="5"></textarea>
+                        <h2>提交/重置按钮</h2>
+                        <input type="submit">
+                        <input type="reset">
+                    </form>
+                </ol>
+            </div>
+        <li>下拉菜单框</li>
+            <div>
+                <ol type="A">
+                    <li>&lt;select&gt;&lt;/select&gt;定义下拉菜单框</li>
+                    <li>&lt;option&gt;&lt;/option&gt;定义下拉菜单框的选项</li>
+                    <li>selected="selected"：定义默认显示</li>
+                    <li>disabled="disabled"：定义锁定选项，锁定就不能再被选择</li>
+                    <li>size="number"：定义选项数量，只能单选</li>
+                    <li>multiple="multiple"：定义选项数量，可以多选</li>
+                </ol>
+                <p>实例</p>
+                <select>
+                    <option selected="selected">请选择</option>
+                    <option>成都</option>
+                    <option disabled="disabled">上海</option>
+                    <option>浙江</option>
+                </select>
+            </div>
+    </ol>
 </body>
 </html>
