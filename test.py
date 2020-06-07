@@ -13,8 +13,8 @@
 # test(2)
 
 
-def test(x):
-        if x==1:
-                return 1
-        return x*test(x-1)
-print(test(3))
+import pickle
+d = dict(name='Bob', age=20, score=88)
+x=pickle.dumps(d)
+y=pickle.loads(x)
+print(y)
