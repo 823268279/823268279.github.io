@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>python</title>
+    <style>
+        div{width: 300px;
+            color: slateblue;
+            font: bolder italic 15px '微软雅黑';}
+        #h4{font: bolder italic 20px '微软雅黑';}
+    </style>
+</head>
+<body>
+    <h1>python脚本语言</h1>
+    <ol type="1">
+        <li id='h4'>字符串：一组有序，不可变的，可重复的数据</li>
+            <div>
+                <ul type='square'>
+                    <li>ord(x);把字符编码成整数</li>
+                    <li>chr(x);把编码转换成对应的字符</li>
+                    <li>encode(x);把str编码成bytes</li>
+                    <li>decode(x)把bytes解码成str</li>
+                    <li>len(x);长度</li>
+                    <li>split();把字符串转换为列表</li>
+                    <li>join();把列表转换为字符串</li>
+                    <li>%s;字符串替换</li>
+                    <li>replace(x);字符串替换</li>
+                    <li>%d;整数替换</li>
+                    <li>%f;浮点数替换</li>
+                    <li>%x;十六进制整数替换</li>
+                </ul>
+            </div>
+        <li  id='h4'>列表：一组有序，可变的，可重复的数据</li>
+            <div>
+                <ul type='square'>
+                    <li>[x];索引</li>
+                    <li>[x:y];切片</li>
+                        <ol type="I">
+                            <li>[:x];前x个元素</li>
+                            <li>[-x:];后x个元素</li>
+                            <li>[::x];每隔x取一个元素</li>
+                        </ol>
+                    <li>append(x);末尾插入</li>
+                    <li>len(x);长度</li>
+                    <li>pop(x);末尾删除</li>
+                    <li>insert(num,x);指定插入</li>
+                    <li>pop(num);指定删除</li>
+                </ul>
+            </div>
+        <li  id='h4'>元组：一组有序，不可变，可重复的数据</li>
+            <div>
+                <ul type='square'>
+                    <li>[x];索引</li>
+                    <li>[x;y];切片</li>
+                    <li>len(x);长度</li>
+                </ul>
+            </div>
+        <li  id='h4'>字典:一组无序，可变的，可重复的键值对数据</li>
+            <div>
+                <ul type='square'>
+                    <li>get('key');检查是否存在</li>
+                    <li>pop('key');删除字典</li>
+                    <li>items();以列表返回可遍历的(键, 值)元组数组</li>
+                </ul>
+            </div>
+        <li  id='h4'>集合：一组无序，不重复的数据</li>
+            <div>
+                <ul type='square'>
+                    <li>x=set();空集合</li>
+                    <li>add(x);插入元素</li>
+                    <li>len(x);长度</li>
+                    <li>update(x);插入列表、元组、字典</li>
+                    <li>remove(x);删除元素，没有元素就报错</li>
+                    <li>discard(x);删除元素，没有也不会报错</li>
+                    <li>s1&s2;集合交集</li>
+                    <li>s1|s2;集合并集</li>
+                    <li>s1-s2;集合差集</li>
+                    <li>pop();随机删除元素</li>
+                    <li>clear();清空元素</li>
+                </ul>
+            </div>
+        <li  id='h4'>条件判断</li>
+            <div>
+                <pre>
+                    x = 5
+                    if x<3:
+                        print('小')
+                    elif x>5:
+                        print('中')
+                    else:
+                        print('大')
+                </pre>
+            </div>
+        <li  id='h4'>循环</li>
+            <div>
+                <ul type='square'>
+                    <li>range(x);生成整数序列</li>
+                    <li>enumerate(x);同时获取index，value值</li>
+                    <li>break;终止循环</li>
+                    <li>continue;跳过当前循环，继续下一次循环</li>
+                    <li>for循环</li>
+                        <ol type="A">
+                            <li>字符串遍历</li>
+                                <pre>
+                                    x='abcd'
+                                    for i in x:
+                                        print(i)
+                                </pre>
+                            <li>列表遍历</li>
+                                <pre>
+                                    x=[1,2,3,4]
+                                    for i in x:
+                                        print(i)
+                                </pre>
+                            <li>元组遍历</li>
+                                <pre>
+                                    x=(1,2,3,4)
+                                    for i in x:
+                                        print(i)
+                                </pre>
+                            <li>字典遍历</li>
+                                <pre>
+                                    x={'name':'wowo',
+                                        'age':'23'}
+                                    for i,n in x.items():
+                                        print(i,n)
+                                </pre>
+                        </ol>
+                    <li>while循环</li>
+                        <pre>
+                            x=0
+                            while x<10:
+                                x=x+1
+                                print(x)
+                        </pre>
+                </ul>
+            </div>
+        <li  id='h4'>函数</li>
+            <div>
+                <ul type='square'>
+                    <li>函数定义</li>
+                        <pre>
+                            def test():
+                                x='a'
+                                print(x)
+                            test()
+                        </pre>
+                    <li>return;返回函数结果</li>
+                        <pre>
+                            def test():
+                                x='a'
+                                return x
+                            test()
+                        </pre>
+                    <li>位置参数</li>
+                        <pre>
+                            def test(x):
+                                print(x)
+                            test(2)
+                        </pre>
+                    <li>默认值参数</li>
+                        <pre>
+                            def test(x,y=3):
+                                print(x)
+                                print(y)
+                            test(2)
+                        </pre>
+                    <li>可变参数</li>
+                        <pre>
+                            def test(*x):
+                                for i in x:
+                                    print(i)
+                            list=[1,2,3,4]
+                            test(*list)
+                        </pre>
+                    <li>关键字参数</li>
+                        <pre>
+                            def test(**x):
+                                for i,n in x.items():
+                                    print(i,n)
+                            dict={'name':'wowo','age':'22'}
+                            test(**dict)
+                        </pre>
+                    <li>递归函数</li>
+                        <pre>
+                            def test(x):
+                                    if x==1:
+                                            return 1
+                                    return x*test(x-1)
+                            print(test(3))
+                        </pre>
+                    <li>常用内置函数</li>
+                        <ol type="A">
+                            <li>print();打印</li>
+                            <li>input();输入</li>
+                            <li>abs(x);返回绝对值</li>
+                            <li>max(x,y,z);返回最大值</li>
+                            <li>hex(x);整数转换为16进制的字符串</li>
+                            <li>isinstance();检查数据类型</li>
+                            <li>lower();转换为小写</li>
+                            <li>sum();求和</li>
+                        </ol>
+                </ul>
+            </div>
+        <li  id='h4'>类</li>
+        <li  id='h4'>模块</li>
+        <li  id='h4'>面向对象</li>
+        <li  id='h4'>IO编程</li>
+        <li  id='h4'>进程与线程</li>
+        <li  id='h4'>常用三方包</li>
+        <li  id='h4'>网络编程</li>
+        
+    </ol>
+</body>
+</html>

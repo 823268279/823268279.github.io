@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        div{width: 300px;
+            color: slateblue;}
+        pre{
+            width: 300px;
+            font-size: 20px;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML_定义文本动作</h1>
+    <ol type="1">
+        <li>外部引用</li>
+            <div>
+                &lt;script src="test.js"&gt;&lt;/script&gt;
+            </div>
+        <li>strict模式：强制要求使用var定义变量</li>
+        <li>字符串：以单引号'或双引号"括起来的任意文本</li>
+            <div>
+                <ul type="square">
+                    <li>length;字符串长度</li>
+                    <li>toUpperCase();字符串大写</li>
+                    <li>toLowerCase();字符串小写</li>
+                    <li>indexOf();返回指定字符串出现的位置</li>
+                    <li>substring();指定索引区间的子串</li>
+                </ul>
+            </div>
+        <li>数组：一组按顺序排列的集合，集合的每个值称为元素</li>
+            <div>
+                <ul type="square">
+                    <li>length;数组长度</li>
+                    <li>indexOf();返回指定元素出现的位置</li>
+                    <li>slice;返回指定元素出现的位置</li>
+                    <li>push();末尾添加若干元素</li>
+                    <li>pop();删除最后一个元素</li>
+                    <li>unshift();开头添加若干元素</li>
+                    <li>shift();删除第一个元素</li>
+                    <li>sort();元素排序</li>
+                    <li>reverse();元素反转</li>
+                    <li>splice();指定的索引区间删除若干元素，然后再从该位置添加若干元素</li>
+                    <li>concat();连接数组</li>
+                    <li>join();指定字符串连接数组中的元素</li>
+    
+                </ul>
+            </div>
+        <li>对象：是一组键值对的结构</li>
+            <div>
+                <ul type="square">
+                    <div>
+                        <li>delete;删除对象的一个属性</li>
+                    </div>
+                </ul>
+            </div>
+        <li>map:更高级的对象，具有极快的查找速度</li>
+            <div>
+                <ul type='square'>
+                    <li>var x=new Map();定义空map</li>
+                    <li>x.set('wowo',22);添加键值对</li>
+                    <li>x.get('wowo');查看键值对</li>
+                    <li>x.has('wowo');检查是否存在</li>
+                    <li>x.delete('wowo');删除键值对</li>
+                </ul>
+            </div>
+        <li>set;没有重复元素的数组</li>
+            <div>
+                <ul type='square'>
+                    <li>var x=new Set();定义空set</li>
+                    <li>x.add(x);添加元素</li>
+                    <li>x.delete(x);删除元素</li>
+
+                </ul>
+            </div>
+        <li>条件判断</li>
+            <div>
+                <pre>
+                    var bmi = 29;
+                    if (bmi < 18.5){
+                    console.log('过轻')
+                    }else if (bmi<25) {
+                        console.log('正常')
+                    }else if (bmi<28) {
+                        console.log('过重')
+                    }else if (bmi<32) {
+                        console.log('肥胖')
+                    }else{
+                        console.log('严重肥胖')
+                    }
+                </pre>
+            </div>
+        <li>循环</li>
+            <div>
+                <ul type='square'>
+                    <li>for循环</li>
+                    <pre>
+                        var x = 0;
+                        for (var i=1;i<=10;i++){
+                            x=x+1;
+                            console.log(x)}
+                    </pre>
+                    <li>for循环数组</li>
+                    <pre>
+                        var arr=['a','b','v','d','e','w','k']
+                        for (var i in arr){
+                            console.log(i)
+                            console.log(arr[i])}
+                    </pre>
+                    <li>for循环对象</li>
+                    <pre>
+                        var project={
+                            "name": "woow",
+                            "age" : "23",
+                            "sex" : '女'}
+                        for (var key in project) {
+                            console.log(key)
+                            console.log(project[key])}
+                    </pre>
+                    <li>while循环</li>
+                    <pre>
+                        var x = 0;
+                        while (true){
+                            if (x<100){
+                                x=x+1
+                                console.log(x)
+                            }else{
+                                break
+                            }
+                        }
+                    </pre>
+                    <li>do...while循环</li>
+                    <pre>
+                        var x = 0;
+                        do{
+                            x=x+1
+                            console.log(x)
+                        }while(x<100)
+                    </pre>
+                </ul>
+            </div>
+        
+    </ol>
+</body>
+</html>

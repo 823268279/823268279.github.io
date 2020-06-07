@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+
+    <link rel="stylesheet" href="test.css">
+
+    <style>
+        h1{font: bolder italic 40px '微软雅黑';}
+        #id{width: 100px;
+            background-color: red;}
+        .class{width: 100px;
+        background-color: red;}
+        a:link{color:rebeccapurple}
+        a:visited{color: red;}
+        a:hover{color: royalblue;}
+        a:active{color: salmon;}
+    </style>
+</head>
+<body>
+    <h1>CSS_定义文本样式</h1>
+    <ol type="1">
+        <li>外部引用</li>
+            <div>
+                &lt;link rel="stylesheet" href="url"&gt;
+            </div>
+        <li>内部引用</li>
+            <div>
+                &lt;style&gt; div{background-color:red} &lt;/style&gt;
+            </div>
+        <li>内联样式</li>
+            <div style="background-color:red; width: 100px;">内联样式</div>
+        <li>选择器</li>
+            <div>
+                <ul type="square">
+                    <li>id选择器(用“#”表示，再用id进行选择)</li>
+                    <li>class选择器(用“.”表示，再用class进行选择)</li>
+                    <li>群组选择器(用标签选择)</li>
+                    <li>通配选择器(用“*”表示，作用全局)</li>
+                    <li>层次选择器(按标签层选择)</li>
+                    <li>属性选择器(按标签中的属性进行选择)</li>
+                    <li>伪类选择器(用于向某些标签添加特殊效果)</li>
+                </ul>
+            </div>
+        <li>背景样式</li>
+            <div>
+                <ul type="square">
+                    <li>width:100px;定义标签宽度</li>
+                    <li>height:100px;定义标签高度</li>
+                    <li>background-color:red;定义标签背景颜色</li>
+                    <li>background-image:x.png;定义标签背景图片</li>
+                    <li>background-repeat:x;定义背景图片的平铺方式</li>
+                        <ol type="A">
+                            <li>repeat-x;x轴平铺</li>
+                            <li>repeat-y;y轴平铺</li>
+                            <li>repeat:x,y;x,y都进行平铺(默认值)</li>
+                            <li>no-repeat;都不平铺</li>
+                        </ol>
+                    <li>background-position:x y;定义背景图片的位置</li>
+                        <ol type="A">
+                            <li>x,y;可以用像素表示(px)</li>
+                            <li>x,y;可以用位置表示(left、center、right;top、center、bottom)</li>
+                        </ol>
+                    <li>background-attachment:x;背景图片随滚动条的移动方式</li>
+                        <ol>
+                            <li>scroll;背景图片是按当前元素进行偏移()</li>
+                            <li>fixed;背景图片是按照浏览器进行偏移</li>
+                        </ol>
+                </ul>
+            </div>
+        <li>边框样式</li>
+            <div>
+                <ul type='square'>
+                    <li>border-style:x;边框线的样式</li>
+                        <ol type="A">
+                            <li>solid;实线</li>
+                            <li>dashed;虚线</li>
+                            <li>dotted;点线</li>
+                        </ol>
+                    <li>border-width:10px;定义边框线的粗细</li>
+                    <li>border-color:red;定义边框线的颜色</li>
+                    <li>单独定义top、bottom、left、right的边框</li>
+                        <ol type="A">
+                            <li>border-top-style:solid;定义上边框线的样式</li>
+                            <li>border-bottom-width:3px;定义下边框线的粗细</li>
+                            <li>border-left-color：red;定义左边框线的颜色</li>
+                        </ol>
+                    <li>border-radius:10px;定义边框圆角</li>
+                </ul>
+            </div>
+        <li>文字样式</li>
+            <div>
+                <ul type='square'>
+                    <li>font-family:x;定义字体类型</li>
+                        <ol type='A'>
+                            <li>simsun;宋体(衬线体)</li>
+                            <li>microsoft yahei;微软雅黑(非衬线体)</li>
+                        </ol>
+                    <li>font-size:x;定义字体大小</li>
+                        <ol type="A">
+                            <li>像素定义，像素越大字体越大</li>
+                            <li>medium;正常大小</li>
+                            <li>large;大</li>
+                            <li>x-large;较大</li>
+                            <li>xx-large;最大</li>
+                            <li>small;小</li>
+                            <li>x-small;较小</li>
+                            <li>xx-small;最小</li>
+                        </ol>
+                    <li>font-weight:x;定义字体粗细</li>
+                        <ol type='A'>
+                            <li>数值定义，数值越大，字体越粗</li>
+                            <li>normal;正常粗细(默认值)</li>
+                            <li>bolder;字体加粗</li>
+                        </ol>
+                    <li>font-style:x;定义字体样式</li>
+                        <ol type="A">
+                            <li>normal;正体(默认)</li>
+                            <li>italic:斜体</li>
+                        </ol>
+                    <li>color:red;定义字体颜色</li>
+                </ul>
+            </div>
+        <li>文本样式</li>
+            <div>
+                <ul type='square'>
+                    <li>text-decoration:x;文本修饰</li>
+                        <ol type="A">
+                            <li>underline;定义文本下划线</li>
+                            <li>line-through;定义文本删除线</li>
+                            <li>overline;定义文本上划线</li>
+                            <li>none;表示无样式</li>
+                        </ol>
+                    <li>text-transform:x;英文修饰</li>
+                        <ol type="A">
+                            <li>lowercase;英文小写</li>
+                            <li>uppercase;英文大写</li>
+                        </ol>
+                    <li>text-indent:x;文本缩进</li>
+                        <ol type="A">
+                            <li>px表示固定首行缩进</li>
+                            <li>em表示相对首行缩进(相对字体大小而变化)</li>
+                        </ol>
+                    <li>letter-spacing:x;字间距</li>
+                        <ol type="A">
+                            <li>px表示固定字间距</li>
+                            <li>em表示相对字间距(相对字体大小而变化)</li>
+                        </ol>
+                        <li>word-spacing:x;词间距</li>
+                        <ol type="A">
+                            <li>px表示固定词间距</li>
+                            <li>em表示相对词间距(相对字体大小而变化)</li>
+                        </ol>
+                    <li>text-align:x;文本对齐方式</li>
+                        <ol type="A">
+                            <li>left;文本左对齐</li>
+                            <li>center;文本居中</li>
+                            <li>right;文本右对齐</li>
+                            <li>justify;两端对齐</li>
+                        </ol>
+                    <li>line-height:x;文本行高(上边距+字体大小+下边距=行高)</li>
+                        <ol type="A">
+                            <li>像素定义行高</li>
+                            <li>数值定义行高(字体大小*数值=行高)</li>
+                        </ol>
+                    <li>文本字间距</li>
+                        <ol type="A">
+                            <li>letter-spacing:10px;中文字间距</li>
+                            <li>word-spacing:10px;英文词间距</li>
+                        </ol>
+                    <li>英文词折行</li>
+                        <ol type="A">
+                            <li>word-break:break-all;强制折行</li>
+                            <li>word-wrap:break-word;非强制折行</li>
+                        </ol>
+                </ul>
+
+            </div>
+        <li>链接样式</li>
+            <div>
+                <ul type='square'>
+                    <li>a:lick{样式};链接未访问前的状态</li>
+                    <li>a:visited{样式};已被访问的链接</li>
+                    <li>a:hover{样式};鼠标指针移动到链接上</li>
+                    <li>a:active:{样式};正在被点击的链接</li>
+                </ul>
+            </div>
+        <li>列表样式</li>
+            <div>
+                <ul type='square'>
+                    <li>list-style-image:url('test.png');自定义列表项目符号</li>
+                </ul>
+            </div>
+        <li>轮廓样式</li>
+            <div>
+                <ul type='square'>
+                    <li>outline-color:red;定义轮廓颜色</li>
+                    <li>outline-style:x;定义轮廓样式</li>
+                        <ol type="A">
+                            <li>none;无轮廓(默认值)</li>
+                            <li>dotted;点状轮廓</li>
+                            <li>dashed;虚线轮廓</li>
+                            <li>solid;实线轮廓</li>
+                            <li>double;双线轮廓</li>
+                            <li>groove;3D凹槽轮廓</li>
+                            <li>ridge;3D凸槽轮廓</li>
+                            <li>inset;3D凹边轮廓</li>
+                            <li>outset;3D凸边轮廓</li>
+                        </ol>
+                    <li>outline-width:x;定义轮廓宽度</li>
+                        <ol type="A">
+                            <li>thin;细轮廓</li>
+                            <li>medium;中等轮廓(默认)</li>
+                            <li>thick;粗轮廓</li>
+                            <li>length;自定义</li>
+                        </ol>
+                </ul>
+                
+                    
+            </div>
+        <li>复合样式：一个css属性控制多种样式</li>
+            <div>
+                <ul type='square'>
+                    <li>背景中的样式没有顺序</li>
+                    <li>边框中的样式没有顺序</li>
+                    <li>文本中的属性有顺序(size和family必须放在最后)</li>
+                    <li>轮廓中的属性按颜色、样式、宽度排序</li>
+                </ul>
+            </div>
+        <li>盒子模型</li>
+            <div>
+                <ul type='square'>
+                    <li>content:内容区域，由width和height决定</li>
+                    <li>padding：内边距，由像素控制距离，不能为负数</li>
+                    <li>border：包装盒，占5个固定像素</li>
+                    <li>margin：外边距，由像素控制距离，可以为负数</li>
+
+                </ul>
+            </div>
+        <li>标签分类：布局一般用块标签，修饰文本一般用内联标签</li>
+            <div>
+                <ul type='square'>
+                    <li>block(块)：div、p、ul、li、h......</li>
+                        <ol type='A'></ol>
+                            <li>独占一行</li>
+                            <li>支持所有样式</li>
+                            <li>不写宽度的时候，宽度由父容器决定</li>
+                            <li>所占区域是一个矩形</li>
+                    <li>Inline(内联)：span、a、em、strong、img......</li>
+                        <ol type="A">
+                            <li>挨在一排，排列显示</li>
+                            <li>有些样式不支持：width、height、margin、padding</li>
+                            <li>不写宽度的时候，宽度由内容决定</li>
+                            <li>所占区域不一定是矩形</li>
+                            <li>内联之间会有间隙(换行产生的)</li>
+                        </ol>
+                    <li>display:block;将标签的特定属性强制改成一个块的特定属性</li>
+                    <li>display:inline;将标签的特定属性强制改成一个内联的特定属性</li>
+                    <li>display:inline-block;将标签的特定属性强制改成一个内联-块的特定属性</li>
+                    
+                </ul>
+            </div>
+        <li>溢出隐藏</li>
+            <ul type='square'>
+                <li>overflow:hidden;用剪切的方式隐藏溢出字体</li>
+                <li>overflow:scroll;用滑动条的方式隐藏字体(没有溢出也会显示滑动条)</li>
+                <li>overflow:auto;用滑动条的方式隐藏字体(只有溢出才会加滑动条)</li>
+            </ul>
+        <li>透明度与手势</li>
+            <ul type='square'>
+                <li>opacity:0.5;所有子标签透明</li>
+                <li>background-rgba(255,0,0,0.3);只有背景色会透露</li>
+                <li>cursor:x;手势</li>
+                    <ol type='A'>
+                        <li>cursor:default;鼠标触碰变箭头图标</li>
+                        <li>cursor:pointer;鼠标触碰变小手图片</li>
+                        <li>cursor:move;鼠标触碰变移动图标</li>
+                        <li>cursor:help;鼠标触碰变帮助图标</li>
+                        <li>cursor:url(./鼠标.ico),auto;自定义鼠标触碰图标</li>
+                    </ol>
+            </ul>
+        <li>position:x;定位</li>
+            <ul type='square'>
+                <li>static;静态定位</li>
+                <li>adsolute;绝对定位</li>
+                <li>relative;相对定位</li>
+                <li>fixed;固定定位</li>
+            </ul>
+
+    </ol>
+
+    <!-- 练习 -->
+    <a href="http://www.baidu.com" >百度</a>
+</body>
+</html>
