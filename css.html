@@ -9,30 +9,35 @@
 
     <style>
         h1{font: bolder italic 40px '微软雅黑';}
-        #id{width: 100px;
+        div{width: 600px;
+            color: slateblue;}
+        #h4{font: bolder italic 20px '微软雅黑';}
+        /* #id{width: 100px;
             background-color: red;}
         .class{width: 100px;
         background-color: red;}
         a:link{color:rebeccapurple}
         a:visited{color: red;}
         a:hover{color: royalblue;}
-        a:active{color: salmon;}
+        a:active{color: salmon;} */
     </style>
 </head>
 <body>
     <h1>CSS_定义文本样式</h1>
     <ol type="1">
-        <li>外部引用</li>
+        <li id='h4'>外部引用</li>
             <div>
                 &lt;link rel="stylesheet" href="url"&gt;
             </div>
-        <li>内部引用</li>
+        <li id='h4'>内部引用</li>
             <div>
                 &lt;style&gt; div{background-color:red} &lt;/style&gt;
             </div>
-        <li>内联样式</li>
-            <div style="background-color:red; width: 100px;">内联样式</div>
-        <li>选择器</li>
+        <li id='h4'>内联样式</li>
+            <div>
+                    &lt;p style="background-color:red; width: 100px;"&gt;&lt;/p&gt;
+            </div>
+        <li id='h4'>选择器</li>
             <div>
                 <ul type="square">
                     <li>id选择器(用“#”表示，再用id进行选择)</li>
@@ -44,7 +49,7 @@
                     <li>伪类选择器(用于向某些标签添加特殊效果)</li>
                 </ul>
             </div>
-        <li>背景样式</li>
+        <li id='h4'>背景样式</li>
             <div>
                 <ul type="square">
                     <li>width:100px;定义标签宽度</li>
@@ -70,7 +75,7 @@
                         </ol>
                 </ul>
             </div>
-        <li>边框样式</li>
+        <li id='h4'>边框样式</li>
             <div>
                 <ul type='square'>
                     <li>border-style:x;边框线的样式</li>
@@ -90,7 +95,7 @@
                     <li>border-radius:10px;定义边框圆角</li>
                 </ul>
             </div>
-        <li>文字样式</li>
+        <li id='h4'>文字样式</li>
             <div>
                 <ul type='square'>
                     <li>font-family:x;定义字体类型</li>
@@ -123,7 +128,7 @@
                     <li>color:red;定义字体颜色</li>
                 </ul>
             </div>
-        <li>文本样式</li>
+        <li id='h4'>文本样式</li>
             <div>
                 <ul type='square'>
                     <li>text-decoration:x;文本修饰</li>
@@ -178,7 +183,7 @@
                 </ul>
 
             </div>
-        <li>链接样式</li>
+        <li id='h4'>链接样式</li>
             <div>
                 <ul type='square'>
                     <li>a:lick{样式};链接未访问前的状态</li>
@@ -187,13 +192,13 @@
                     <li>a:active:{样式};正在被点击的链接</li>
                 </ul>
             </div>
-        <li>列表样式</li>
+        <li id='h4'>列表样式</li>
             <div>
                 <ul type='square'>
                     <li>list-style-image:url('test.png');自定义列表项目符号</li>
                 </ul>
             </div>
-        <li>轮廓样式</li>
+        <li id='h4'>轮廓样式</li>
             <div>
                 <ul type='square'>
                     <li>outline-color:red;定义轮廓颜色</li>
@@ -220,7 +225,7 @@
                 
                     
             </div>
-        <li>复合样式：一个css属性控制多种样式</li>
+        <li id='h4'>复合样式：一个css属性控制多种样式</li>
             <div>
                 <ul type='square'>
                     <li>背景中的样式没有顺序</li>
@@ -229,7 +234,7 @@
                     <li>轮廓中的属性按颜色、样式、宽度排序</li>
                 </ul>
             </div>
-        <li>盒子模型</li>
+        <li id='h4'>盒子模型</li>
             <div>
                 <ul type='square'>
                     <li>content:内容区域，由width和height决定</li>
@@ -239,7 +244,7 @@
 
                 </ul>
             </div>
-        <li>标签分类：布局一般用块标签，修饰文本一般用内联标签</li>
+        <li id='h4'>标签分类：布局一般用块标签，修饰文本一般用内联标签</li>
             <div>
                 <ul type='square'>
                     <li>block(块)：div、p、ul、li、h......</li>
@@ -262,33 +267,38 @@
                     
                 </ul>
             </div>
-        <li>溢出隐藏</li>
-            <ul type='square'>
-                <li>overflow:hidden;用剪切的方式隐藏溢出字体</li>
-                <li>overflow:scroll;用滑动条的方式隐藏字体(没有溢出也会显示滑动条)</li>
-                <li>overflow:auto;用滑动条的方式隐藏字体(只有溢出才会加滑动条)</li>
-            </ul>
-        <li>透明度与手势</li>
-            <ul type='square'>
-                <li>opacity:0.5;所有子标签透明</li>
-                <li>background-rgba(255,0,0,0.3);只有背景色会透露</li>
-                <li>cursor:x;手势</li>
-                    <ol type='A'>
-                        <li>cursor:default;鼠标触碰变箭头图标</li>
-                        <li>cursor:pointer;鼠标触碰变小手图片</li>
-                        <li>cursor:move;鼠标触碰变移动图标</li>
-                        <li>cursor:help;鼠标触碰变帮助图标</li>
-                        <li>cursor:url(./鼠标.ico),auto;自定义鼠标触碰图标</li>
-                    </ol>
-            </ul>
-        <li>position:x;定位</li>
-            <ul type='square'>
-                <li>static;静态定位</li>
-                <li>adsolute;绝对定位</li>
-                <li>relative;相对定位</li>
-                <li>fixed;固定定位</li>
-            </ul>
-
+        <li id='h4'>溢出隐藏</li>
+            <div>
+                <ul type='square'>
+                    <li>overflow:hidden;用剪切的方式隐藏溢出字体</li>
+                    <li>overflow:scroll;用滑动条的方式隐藏字体(没有溢出也会显示滑动条)</li>
+                    <li>overflow:auto;用滑动条的方式隐藏字体(只有溢出才会加滑动条)</li>
+                </ul>
+            </div>
+        <li id='h4'>透明度与手势</li>
+            <div>
+                <ul type='square'>
+                    <li>opacity:0.5;所有子标签透明</li>
+                    <li>background-rgba(255,0,0,0.3);只有背景色会透露</li>
+                    <li>cursor:x;手势</li>
+                        <ol type='A'>
+                            <li>cursor:default;鼠标触碰变箭头图标</li>
+                            <li>cursor:pointer;鼠标触碰变小手图片</li>
+                            <li>cursor:move;鼠标触碰变移动图标</li>
+                            <li>cursor:help;鼠标触碰变帮助图标</li>
+                            <li>cursor:url(./鼠标.ico),auto;自定义鼠标触碰图标</li>
+                        </ol>
+                </ul>
+            </div>
+        <li id='h4'>position:x;定位</li>
+            <div>
+                <ul type='square'>
+                    <li>static;静态定位</li>
+                    <li>adsolute;绝对定位</li>
+                    <li>relative;相对定位</li>
+                    <li>fixed;固定定位</li>
+                </ul>
+            </div>
     </ol>
 
     <!-- 练习 -->

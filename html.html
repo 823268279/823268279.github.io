@@ -6,61 +6,65 @@
     <title>html</title>
     <style>
         h1{font: bolder italic 40px '微软雅黑';}
-        li{width: 1000px;
+        /* li{width: 1000px;
             height: 40px;
-            font: bolder italic 20px '微软雅黑';}
-        div{width: 300px;
-            color:rgb(85, 75, 85);}
-        caption,td,th{font: bolder italic 17px '微软雅黑';}
+            font: bolder italic 20px '微软雅黑';} */
+        div{width: 600px;
+        color: slateblue;}
+        /* caption,td,th{font: bolder italic 17px '微软雅黑';} */
+        #h4{font: bolder italic 20px '微软雅黑';}
+
     </style>
 </head>
 <body>
     <h1>HTML_超文本标记语言</h1>
     <ol type="1">
-        <li>标题（h后面的数字越大，标题越小）</li>
+        <li id='h4'>标题（h后面的数字越大，标题越小）</li>
             <div><h2>向日葵</h2></div>
-        <li>段落</li>
+        <li id='h4'>段落</li>
             <div><p>入目无他人，四下皆是你；有你时，你是太阳我目不转睛；无你时，我低头谁也不见</p></div>
-        <li>换行</li>
+        <li id='h4'>换行</li>
             <div>换<br />行</div>
-        <li>文字加粗显示</li>
+        <li id='h4'>文字加粗显示</li>
             <div><strong>文字加粗</strong></div>
-        <li>文字斜体显示</li>
+        <li id='h4'>文字斜体显示</li>
             <div><em>文字斜体</em></div>
-        <li>文字加上标</li>
+        <li id='h4'>文字加上标</li>
             <div>文字上标<sup>2</sup></div>
-        <li>文字加下标</li>
+        <li id='h4'>文字加下标</li>
             <div>文字下标<sub>3</sub></div>
-        <li>文字加删除符号</li>
+        <li id='h4'>文字加删除符号</li>
             <div><del>文字删除</del></div>
-        <li>文字加插入符号</li>
+        <li id='h4'>文字加插入符号</li>
             <div><ins>文字删除</ins></div>
-        <li>超链接</li>
+        <li id='h4'>超链接</li>
             <div><a href="https://www.baidu.com">百度</a></div> 
-        <li>锚点用于从开始锚点跳转到目标锚点</li>
+        <li id='h4'>锚点用于从开始锚点跳转到目标锚点</li>
             <div><a href="#zz">开始锚点</a></div>
             <div><p id="zz">目标锚点</p></div>
-        <li>文字加尖括号</li>
+        <li id='h4'>文字加尖括号</li>
             <div>
                 <p>&lt;尖括号&gt;</p>
             </div>
-        <li>文字加空格</li>
+        <li id='h4'>文字加空格</li>
             <div>
                 <p>空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</p>
             </div>
-        <li>插入图片</li>
+        <li id='h4'>插入图片</li>
             <div>
                 <img src="./img/html_img.png" alt="图片">
             </div>
-        <li>定义水平线</li>
+        <li id='h4'>定义水平线</li>
             <div>
                 <hr />
             </div>
-        <li>添加注释</li>
+        <li id='h4'>添加注释</li>
             <div>
-                <!--这是一段注释-->
+                <pre>
+                    <!--这是一段注释-->
+                </pre>
             </div>
-        <li>无序列表</li>
+        <li id='h4'>无序列表</li>
             <div>
                 <ul type="circle">
                     <li>type="circle"：定义序号为黑色圆心空</li>
@@ -72,7 +76,7 @@
                     <li>type="square"：定义序号为黑色实心方块</li>
                 </ul>
             </div>
-        <li>有序列表</li>
+        <li id='h4'>有序列表</li>
             <div>
                 <ol type="a">
                     <li>type="a"：定义序号为a，b，c</li>
@@ -90,7 +94,7 @@
                     <li>type="I"：定义序号为I，II，III</li>
                 </ol>
             </div>
-        <li>自定义列表</li>
+        <li id='h4'>自定义列表</li>
             <div>
                 <dl>
                     <dt>序号一
@@ -101,7 +105,7 @@
                     </dt>
                 </dl>
             </div>
-        <li>嵌套列表</li>
+        <li id='h4'>嵌套列表</li>
             <div>
                 <ul type="square">
                     <li>四川省</li>
@@ -112,7 +116,7 @@
                         </ol>
                 </ul>
             </div>
-        <li>表格</li>
+        <li id='h4'>表格</li>
             <div>
                 <table>
                     <caption>表格标题</caption>
@@ -133,7 +137,7 @@
                     <tfoot><!--表格尾--></tfoot>
                 </table>
             </div>
-        <li>表格属性</li>
+        <li id='h4'>表格属性</li>
             <div>
                 <ol type="A">
                     <li>border="1"：定义表格边框（数字越大，边框的线条越粗）</li>
@@ -167,7 +171,7 @@
                         <tfoot></tfoot>
                 </table>
             </div>
-        <li>表单</li>
+        <li id='h4'>表单</li>
             <div>
                 <ol type="A">
                     <li>&lt;form&gt;&lt;/form&gt;定义表单最外层的容器</li>
@@ -221,7 +225,7 @@
                     </form>
                 </ol>
             </div>
-        <li>下拉菜单框</li>
+        <li id='h4'>下拉菜单框</li>
             <div>
                 <ol type="A">
                     <li>&lt;select&gt;&lt;/select&gt;定义下拉菜单框</li>
