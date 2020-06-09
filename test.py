@@ -12,9 +12,7 @@
 #     print(y)
 # test(2)
 
-
-import pickle
-d = dict(name='Bob', age=20, score=88)
-x=pickle.dumps(d)
-y=pickle.loads(x)
-print(y)
+import pyautogui
+img=pyautogui.screenshot(region=(x1,y1,x2,y2))
+color=img.getpixel(x,y)
+print(color)

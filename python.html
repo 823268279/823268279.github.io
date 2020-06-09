@@ -344,7 +344,155 @@
             </div>
         <li  id='h4'>进程与线程</li>
         <li  id='h4'>常用三方包</li>
-        <li  id='h4'>网络编程</li>
+            <div>
+                <ul type='square'>
+                    <li>数据处理</li>
+                        <ol type='A'>
+                            <li>xlsxwriter模块</li>
+                                <pre>
+                                    import xlsxwriter
+                                    workbook = xlsxwriter.Workbook(r'test.xlsx') #创建xlsx文件
+                                    worksheet = workbook.add_worksheet('Sheet1') #在xlsx文件中创建Sheet1表格
+                                    worksheet.write('A1','数据') #往单元格A1中写入数据
+                                    worksheet.set_column('A','B',30) #设置AB列之间的列宽
+                                    workbook.close() #关闭xlsx文件
+                                </pre>
+                            <li>xlrd模块</li>
+                                <pre>
+                                    import xlrd
+                                    workbook=xlrd.open_workbook(r'test.xlsx')   #指定读取的xlsx文件
+                                    worksheet=workbook.sheet_by_name('Sheet1')  #指定读取xlsx文件中的Sheet1表
+                                    col_one=worksheet.col_values(0) #读取sheet1中的第一列
+                                    row_one=worksheet.row_values(0) #读取sheet1中的第一行
+                                    col_row=worksheet.row_values(0)[3]  #读取sheet1中的第一行第三列
+                                </pre>
+                            <li>openpyxl模块</li>
+                                <pre>
+                                    workbook=load_workbook(r'test.xlsx')    #指定读取的xlsx文件
+                                    worksheet= workbook['Sheet1']   #指定读取的xlsx文件中的Sheet1表
+                                    worksheet.column_dimensions['A'].width = 20 #设置列宽
+                                    worksheet.row_dimensions[0].height = 30 #设置行高
+                                    worksheet [A1 ].alignment = Alignment(horizontal='center', vertical='center')   #设置文本居中
+                                    worksheet [A1 ].alignment = Alignment(wrap_text=True)   #设置自动换行
+                                    worksheet.cell(1,1).value = '测试'  #文字写入
+                                    worksheet.cell(1,1).value #文字读取
+                                    workbook.save() #保存xlsx文件
+                                </pre>
+                            <li>dicttoxml模块</li>
+                                <pre>
+                                    import dicttoxml
+                                    json={"name":"wowo","sex":"1"}  #定义字典
+                                    xml=dicttoxml.dicttoxml(json,root=False,attr_type=False)    #字典转换为xml
+                                    print(xml)
+                                </pre>
+                            <li>xmltodict模块</li>
+                                <pre>
+                                    import xmltodict
+                                    import json
+                                    xml=xmltodict.parse('&lt;span&gt;hello&lt;/span&gt;') #xml转换为dict
+                                    json=json.dumps(xml)
+                                    print(json)
+                                </pre>
+                        </ol>
+                    <li>数据提取</li>
+                        <ol type="A">
+                            <li>re模块</li>
+                                <img src=".img/re.png" alt="操作符">
+                                <li>re.compile();将正则表达式的字符串形式编译成正则表达式对象</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                    </pre>
+                                <li>re.search();在一个字符串中搜索匹配正则表达式的第一个位置(返回match对象)</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                        y=x.search('BIT100081 100084TSU')
+                                        print(y.group())
+                                    </pre>
+                                <li>re.match();从一个字符串的开始位置起匹配正则表达式</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                        y=x.match('100081BIT 100084TSU')
+                                        print(y.group())
+                                    </pre>
+                                <li>re.findall;搜索字符串，以列表类型返回全部能匹配的子串</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                        y=x.findall('100081BIT 100084TSU')
+                                        print(y)
+                                    </pre>
+                                <li>re.split();将一个字符串按照正则表达式匹配结果进行分隔，返回列表类型</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                        y=x.split('BIT100081 TSU100084',maxsplit=1)
+                                        print(y)
+                                    </pre>
+                                <li>re.finditer();搜索字符串，返回一个匹配结果的迭代类型(每个迭代元素是match对象)</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                        for i in x.finditer('BIT100081 TSU100084'):
+                                            print(i.group())
+                                    </pre>
+                                <li>re.sub();在一个字符串中替换所有匹配正则表达式的字符串，返回替换后的字符串</li>
+                                    <pre>
+                                        import re
+                                        x=re.compile(r'[1-9]\d{5}')
+                                        y=x.sub(':hello',"BIT100081 TSU100084")
+                                        print(y)
+                                    </pre>
+                            <li>bs4模块</li>
+                                <ul type='square'>
+                                    <li>soup=BeautifulSoup(html,'html.parser');html.parser是一个html的解释器</li>   
+                                    <li>soup.prettify();获取解析后的html</li>
+                                    <li>soup.title;获取解析后的html标题</li>
+                                    <li>soup.findAll(x);获取解析后的html中的所有x标签</li>
+                                    <li>soup.findAll(attribute='y');获取解析后的html中的所有含y属性的标签</li>
+                                    <li>soup.findAll(string='z');获取解析后的html中的标签之间能匹配z的文本</li>
+                                    <li>soup.x.string;获取解析后的html中的x标签之间的文本</li>
+                                </ul>
+                        </ol>
+                </ul>
+            </div>
+        <li id='h4'>图形界面</li>
+            <div>
+                <ul type='square'>
+                    <li>pyautogui.FAILSAFE=False;保护措施，鼠标放于（0，0）即可主动引发错误，中断执行中的脚本</li>
+                    <li>pyautogui.size();获取屏幕分辨率</li>
+                    <li>pyautogui.position();获取当前鼠标的位置</li>
+                    <li>根据像素截图并保存</li>
+                        <pre>
+                            import pyautogui
+                            img=pyautogui.screenshot(region=(x1,y1,x2,y2))
+                            img.save(test.png)
+                        </pre>
+                    <li>根据像素获取图片中的颜色</li>      
+                        <pre>
+                            import pyautogui
+                            img=pyautogui.screenshot(region=(x1,y1,x2,y2))
+                            color=img.getpixel(x,y)
+                            print(color)
+                        </pre>
+                    <li>pyautogui.moveTo(x,y,z);像素以左上角为原点进行移动(z表示鼠标移动速度)</li>
+                    <li>pyautogui.moveRel(x,y,z);像素以当前位置为原点进行移动(z表示鼠标移动速度)</li>
+                    <li>pyautogui.locateCenterOnScreen('test.png');根据图片获取图片中心像素</li>
+                    <li>pyautogui.dragTo(x,y,z);像素以左上角为原点进行拖拽(z表示鼠标移动速度)</li>
+                    <li>pyautogui.dragRel(x,y,z);像素以当前位置为原点进行拖拽(z表示鼠标移动速度)</li>
+                    <li>pyautogui.typewrite(['x'],y);执行单个按键(x为键盘码，y为执行速度)/li>
+                    <li>pyautogui.hotkey('x','y')执行组合按键</li>
+                </ul>
+            </div>
+        <li id='h4'>网络编程</li>
+        <li id='h4'>电子邮箱</li>
+        <li id='h4'>访问数据库</li>
+        <li id='h4'>负载测试</li>
+        <li id='h4'>自动化测试框架</li>
+        <li id='h4'>web开发</li>
+        <li id='h4'>异步io</li>
         
     </ol>
 </body>
