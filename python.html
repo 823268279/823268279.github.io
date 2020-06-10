@@ -458,7 +458,7 @@
                         </ol>
                 </ul>
             </div>
-        <li id='h4'>图形界面</li>
+        <li id='h4'>GUI自动化</li>
             <div>
                 <ul type='square'>
                     <li>pyautogui.FAILSAFE=False;保护措施，鼠标放于（0，0）即可主动引发错误，中断执行中的脚本</li>
@@ -486,12 +486,296 @@
                     <li>pyautogui.hotkey('x','y')执行组合按键</li>
                 </ul>
             </div>
+        <li id='h4'>图形界面</li>   
+        <li id='h4'>定时器</li>
+            <div>
+                <pre>
+                    import schedule
+                    name = 'wowo'
+                    def job(name):
+                        print('her name is: %s' % name)
+                    #每隔二秒钟执行一次任务
+                    schedule.every(2).seconds.do(job, name)   
+                    #每隔二分钟执行一次任务
+                    schedule.every(2).minutes.do(job, name)  
+                    #每隔一小时执行一次任务 
+                    schedule.every(1).hour.do(job, name) 
+                    #每天的10:30执行一次任务  
+                    schedule.every().day.at("10:30").do(job, name)   
+                    #每隔5到10天执行一次任务
+                    schedule.every(5).to(10).days.do(job, name) 
+                    #每周一的这个时候执行一次任务  
+                    schedule.every().monday.do(job, name) 
+                    #每周三13:15执行一次任务  
+                    schedule.every().wednesday.at("13:15").do(job, name)   
+                    while True:
+                        #run_pending：运行所有可以运行的任务
+                        schedule.run_pending()   
+                </pre>
+            </div>
         <li id='h4'>网络编程</li>
         <li id='h4'>电子邮箱</li>
+            <div>
+                <ul type='square'>
+                    <li>发送纯文本</li>
+                        <pre>
+                            import smtplib
+                            from email import encoders
+                            from email.header import Header
+                            from email.mime.text import MIMEText
+                            from email.mime.multipart import MIMEMultipart
+                            from email.utils import parseaddr, formataddr
+                            class Smtp():
+                                #格式化邮箱地址
+                                def format_addr(self,x):
+                                    name, addr = parseaddr(x)
+                                    return formataddr((Header(name, 'utf-8').encode(), addr))
+                                def send_mail(self,x):
+                                    #发送邮箱
+                                    user='503645047@qq.com'
+                                    #qq邮箱登录授权码
+                                    password='hufvhexcdiifbidg'
+                                    #接受邮箱
+                                    user_to='823268279@qq.com'
+                                    #邮件对象
+                                    msg = MIMEMultipart()
+                                    # 邮件正文是MIMEText:
+                                    msg.attach(MIMEText('%s'% x, 'plain', 'utf-8'))
+                                    msg['From'] = Smtp().format_addr('徐铃纹 <%s>' % user)
+                                    msg['To'] = Smtp().format_addr('管理员 <%s>' % user_to)
+                                    msg['Subject'] = Header('来自测试部————徐……', 'utf-8').encode()
+                                    #SMTP——qq邮箱服务器地址
+                                    stmp_server='smtp.qq.com'
+                                    server=smtplib.SMTP(stmp_server,25)
+                                    #打印和SMTP服务器交互的信息
+                                    server.set_debuglevel(1)
+                                    #login()方法用来登录SMTP服务器
+                                    server.login(user,password)
+                                    #sendmaill()方法用来发邮件，[]表示可以发送多个人
+                                    #as_string()方法用来把MIMEText对象变成str
+                                    server.sendmail(user,[user_to],msg.as_string())
+                                    server.quit()
+                        </pre>
+                    <li>发送附件</li>
+                        <pre>
+                            import smtplib
+                            from email import encoders
+                            from email.header import Header
+                            from email.mime.text import MIMEText
+                            from email.mime.multipart import MIMEMultipart
+                            from email.utils import parseaddr, formataddr
+                            class Smtp():
+                            # 格式化邮箱地址
+                            def format_addr(self,x):
+                                name, addr = parseaddr(x)
+                                return formataddr((Header(name, 'utf-8').encode(), addr))
+                            def send_mail(self,local_file):
+                                # 发送邮箱
+                                user='503645047@qq.com'
+                                # qq邮箱登录授权码
+                                password='hufvhexcdiifbidg'
+                                # 接受邮箱
+                                user_to='823268279@qq.com'
+                                # 邮件对象
+                                msg = MIMEMultipart()
+                                # 邮件正文是MIMEText:
+                                msg.attach(MIMEText('send with file...', 'plain', 'utf-8'))
+                                msg['From'] = Smtp().format_addr('徐铃纹 <%s>' % user)
+                                msg['To'] = Smtp().format_addr('管理员 <%s>' % user_to)
+                                msg['Subject'] = Header('来自测试部————徐……', 'utf-8').encode()
+                                # 构造附件
+                                att1 = MIMEText(open('%s' % local_file, 'rb').read(), 'base64', 'utf-8')
+                                att1["Content-Type"] = 'application/octet-stream'
+                                # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
+                                att1["Content-Disposition"] = 'attachment; filename= %s' %  local_file
+                                msg.attach(att1)
+                                # SMTP——qq邮箱服务器地址
+                                stmp_server='smtp.qq.com'
+                                server=smtplib.SMTP(stmp_server,25)
+                                # 打印和SMTP服务器交互的信息
+                                server.set_debuglevel(1)
+                                # login()方法用来登录SMTP服务器
+                                server.login(user,password)
+                                # sendmaill()方法用来发邮件，[]表示可以发送多个人
+                                # as_string()方法用来把MIMEText对象变成str
+                                server.sendmail(user,[user_to],msg.as_string())
+                                server.quit()
+                        </pre>
+                </ul>
+            </div>
         <li id='h4'>访问数据库</li>
+            <div>
+                <ul type='square'>
+                    <li>sqlite3</li>
+                        <pre>
+                            import sqlite3
+                            #与数据库建立连接
+                            conn = sqlite3.connect('sql.db')
+                            #创建游标
+                            cursor = conn.cursor()
+                            #执行sql语句
+                            cursor.execute('create table user(id varchar(20) primary key,name varchar(20))')
+                            cursor.execute('insert into user(id,name) values(001,"wowo")')
+                            cursor.execute('select * from user')
+                            #获取查询结果集
+                            values = cursor.fetchall()
+                            print(values)
+                            #获得插入行数
+                            cursor.rowcount
+                            #关闭游标
+                            cursor.close()
+                            #提交事务
+                            conn.commit()
+                            #关闭连接
+                            conn.close()
+                        </pre>
+                    <li>Pymysql</li>
+                        <pre>
+                            import pymysql
+                            #与数据库建立连接
+                            conn = pymysql.connect('localhost','root','root','test')
+                            #创建游标
+                            cursor = conn.cursor()
+                            #执行sql语句
+                            cursor.execute('create table user(id varchar(20) primary key,name varchar(20))')
+                            cursor.execute('insert into user(id,name) values(001,"wowo")')
+                            cursor.execute('select * from user')
+                            #获取查询结果集
+                            values = cursor.fetchall()
+                            print(values)
+                            #获得插入行数
+                            cursor.rowcount
+                            #关闭游标
+                            cursor.close()
+                            #提交事务
+                            conn.commit()
+                            #关闭连接
+                            conn.close()
+                        </pre>
+                        
+                </ul>
+            </div>
         <li id='h4'>负载测试</li>
+            <div>
+                <ul type='square'>
+                    <pre>
+                        from locust import HttpLocust,TaskSet,task
+                        #定义用户行为
+                        class Test(TaskSet):
+                            #用户执行权重(数值越大,执行频率越高)
+                            @task(1)
+                            def test(self):
+                                self.client.get('/')
+                        class Start(HttpLocust):
+                            #指向用户行为
+                            task_set = Test
+                            #负载任务之间执行的最小等待时间(ms)
+                            min_wait = 3000
+                            #负载任务之间执行的最大等待时间(ms)
+                            max_wait = 6000
+                            #指向负载ip
+                            host = 'http://192.168.199.207:32768'
+                    </pre>
+                    <li>locust -f test.py;启动GUI模式，浏览器输入http:localhost:8089打开GUI</li>
+                    <li>locust –f test.py –-no-web –c 10 –r 2 –t 1m –-csv=D:\report</li>
+                        <ol type="A">
+                            <li>–-no-web;表示不使用web界面运行测试</li>
+                            <li>-c;表示设置虚拟用户数</li>
+                            <li>-r;设置每秒启动虚拟用户数</li>
+                            <li>-t;设置运行时间（h/m/s）</li>
+                            <li>--csv;表示csv测试报告生成位置</li>
+                        </ol>
+                </ul>
+            </div>
         <li id='h4'>自动化测试框架</li>
+            <div>
+                <ul type='square'>
+                    <li>unittest框架</li>
+                        <ol type="A">
+                            <li>定义用例</li>
+                            <li>测试文件必须以test开头</li>
+                            <li>测试函数必须以test开头</li>
+                                <pre>
+                                    import unittest
+                                    class Test(unittest.TestCase):
+                                        #环境初始化
+                                        def setUp(self):
+                                            print(1)
+                                        def tearDown(self):
+                                            print(3)
+                                        def test_001(self):
+                                            print(2)
+                                    if __name__ == "__main__":
+                                        unittest.main()    
+                                </pre>
+                            <li>运行测试集</li>
+                                <pre>
+                                    import unittest
+                                    from HTMLTestRunner import HTMLTestRunner 
+                                    #收集测试用例
+                                    test_suite=unittest.defaultTestLoader.discover(r'./testcase',pattern='test*.py'
+                                    #定义测试文件
+                                    file_z = open(r"test.html",mode='wb')
+                                    #定义测试报告对象
+                                    runner = HTMLTestRunner(stream=file_z,title='WUCRM接口测试报告',description='用例执行情况')
+                                    #运行测试集
+                                    runner.run(test_suite)
+                                </pre>
+                        </ol> 
+                    <li>pytest框架</li>
+                        <ol type="A">
+                            <li>fixtrue定义的文件名必须是conftest.py,测试函数继承生效</li>
+                            <li>@pytest.fixtrue(scope="session");表示全局初始化一次</li>
+                            <li>@pytest.fixtrue(scope="module");表示一个模块只初始化一次</li>
+                            <li>@pytest.fixtrue(scope="function");表示每个function都初始化一次</li>
+                                <pre>
+                                    from py._xmlgen import html
+                                    import pytest
+                                    # 添加接口地址与项目名称
+                                    def pytest_configure(config):
+                                        config._metadata["项目名称"] = "name"
+                                        config._metadata['测试地址'] = 'url'
+                                    # 添加所属部门与测试人员
+                                    @pytest.mark.optionalhook
+                                    def pytest_html_results_summary(prefix):
+                                        prefix.extend([html.p("所属部门: 测试部")])
+                                        prefix.extend([html.p("测试人员: wowo")])
+                                    @pytest.fixture(scope='session')    
+                                    def headers_x():
+                                        token='test'
+                                        return token
+                                </pre>
+                            <li>测试文件必须以test_开头或结尾</li>
+                            <li>测试函数必须以test_*或*_test</li>
+                            <li>测试类中不能定义__init__方法</li>
+                            <li>pytest相关插件</li>
+                                <ol type="i">
+                                    <li>pytest-selenium;集成selenium</li>
+                                    <li>pytest-allure-adaptor;</li>
+                                    <li>pytest-sugar;优化运行效果</li>
+                                    <li>pytest-rerunfailures;重新运行错误用例</li>
+                                    <li>pytest-xdist;多cpu分发分布式执行</li>
+                                    <li>pytest-html;测试报告</li>
+                                </ol>
+                        </ol>
+                </ul>
+            </div>
         <li id='h4'>web开发</li>
+            <div>
+                <li>Flask框架</li>
+                    <pre>
+                        from flask import Flask
+                        app=Flask(__name__)
+                        #定义路由
+                        @app.route('/index')
+                        def index():
+                            html="<div> hello world </div>"
+                            return html
+                        if __name__=='__main__':
+                            #开启调试服务器
+                            app.run(debug=True)
+                    </pre>
+            </div>
         <li id='h4'>异步io</li>
         
     </ol>

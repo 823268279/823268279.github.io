@@ -11,8 +11,13 @@
 #     print(x)
 #     print(y)
 # test(2)
-
-import pyautogui
-img=pyautogui.screenshot(region=(x1,y1,x2,y2))
-color=img.getpixel(x,y)
-print(color)
+from flask import Flask
+app=Flask(__name__)
+#定义路由
+@app.route('/index')
+def index():
+    html="<div> hello world </div>"
+    return html
+if __name__=='__main__':
+    #开启调试服务器
+    app.run(debug=True)
