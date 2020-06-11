@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docker</title>
+    <style>
+        div{width: 600px;
+            color: slateblue;}
+    </style>
+</head>
+<body>
+    <h1>docker容器</h1>
+    <ol type="1">
+        <li>登录docker hub</li>
+            <div>docker login;</div>
+        <li>登出docker hub</li>
+            <div>docker logout;</div>
+        <li>启动docker守护进程</li>
+        <li>docker search docker_name;搜索docker镜像</li>
+            <div>service docker start;</div>
+        <li>获取docker镜像</li>
+            <div>docker pull docker_name;</div>
+        <li>推送本地镜像到docker hub(登录状态)</li>
+            <div>docker push docker_name;</div>
+        <li>启动容器并进入终端</li>
+            <div>docker run -it docker_name /bin/bash;</div>
+            <div>
+                <ul type='square'>
+                    <li>-i;表示交互式操作</li>
+                    <li>-t;表示终端</li>
+                    <li>-d;表示让容器在后台运行</li>
+                    <li>-p;表示将容器内部使用的网络端口映射到宿主机</li>
+                    <li>/bin/bash;交互式shell</li>
+                </ul>
+            </div>
+        <li>进入后台运行中的容器</li>
+            <div>docker exec -it docker_id /bin/bash;</div>
+        <li>停止运行容器</li>
+            <div>docker stop docker_id;</div>
+        <li>重启被停止的容器</li>
+            <div>docker restart docker_id;</div>
+        <li>退出容器终端</li>
+            <div>exit;</div>
+        <li>查看运行中的docker日志</li>
+            <div>docker logs -f docker_id;</div>
+        <li>查看容器内部运行的进程</li>
+            <div>docker top docker_id;</div>
+        <li>查看容器底层信息</li>
+            <div>docker inspect docker_id;</div>
+        <li>查看运行中的容器</li>
+            <div>docker ps;</div>
+        <li>删除容器</li>   
+            <div>docker rm -f docker_id;</div>
+        <li>导出容器</li>
+            <div>docker export docker_id xxx.tar;</div>
+        <li>导出容器</li>
+            <div>cat docker/xxx.tar | docker import REPOSITORY:TA;</div>
+        <li>查看本地所有镜像</li>
+            <div>docker images;</div>
+        <li>修改容器之后创建成新容器</li>   
+            <div>docker commit -m='description' -a='auther' docker_id new_docker_name:tag;</div>
+    </ol>
+</body>
+</html>
