@@ -293,10 +293,14 @@
         <li id='h4'>position:x;定位</li>
             <div>
                 <ul type='square'>
-                    <li>static;静态定位</li>
+                    <li>static;静态定位(默认值)</li>
+                        <div>文档流，忽略定位</div>
                     <li>adsolute;绝对定位</li>
+                        <div>脱离文档流，根据定位显示，依据父级元素为参照物</div>
                     <li>relative;相对定位</li>
+                        <div>文档流，根据定位显示</div>
                     <li>fixed;固定定位</li>
+                        <div>脱离文档流，根据定位显示，依据浏览器窗口为参照物</div>
                 </ul>
             </div>
     </ol>

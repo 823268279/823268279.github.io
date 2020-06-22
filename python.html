@@ -458,6 +458,37 @@
                         </ol>
                 </ul>
             </div>
+        <li id='h4'>mitmdump抓包</li>
+            <div>
+                <ul type='square'>
+                    <li>mitmdump  -w  outfile；抓取数据写入文件</li>
+                    <li>mitmdump  -s   script.py；执行过滤脚本</li>
+                    <li>过滤请求</li>
+                        <pre>
+                            from mitmproxy import http,ctx
+                            def request(flow):
+                                print(flow.request.host)        #host标头值
+                                print(flow.request.url)         #请求的url地址
+                                print(flow.request.scheme)      #请求的协议
+                                print(flow.request.port)        #请求的端口
+                                print(flow.request.method)      #请求的方法
+                                print(flow.request.headers)     #请求的头信息
+                                print(flow.request.cookies)     #请求cookies
+                                print(flow.request.get_text())  #请求body   
+                        </pre>
+                    <li>过滤响应</li>
+                        <pre>
+                            from mitmproxy import http,ctx
+                            def response(flow):
+
+                                print(flow.repsonse.status_code)    #响应状态码
+                                print(flow.request.headers)         #响应头信息
+                                print(flow.repsonse.cookies)        #响应cookies
+                                print(flow.response.text)           #响应内容
+
+                        </pre>
+                </ul>
+            </div>
         <li id='h4'>GUI自动化</li>
             <div>
                 <ul type='square'>
@@ -761,6 +792,20 @@
                         </ol>
                 </ul>
             </div>
+        <li id='h4'>scrapy爬虫</li>
+            <div>
+                <ul type='square'>
+                    <li>scrapy startproject scrapy_namae；创建scrapy项目</li>
+                    <li>scrapy genspider -t spider_template spider_name spider_url；使用模块创建spider</li>
+                    <li>scrapy list；查看所有spider</li>
+                    <li>scrapy view url；用浏览器打开url</li>
+                    <li>scrapy fetch url；获取url的响应</li>
+                    <li>scrapy bench spider_name；检查蜘蛛的爬取速度</li>
+                    <li>scrapy check spider_name；检查蜘蛛的配置</li>
+                    <li>scrapy runspider spider_file；运行一个spider</li>
+                    <li>scrapy crowl spider_name；按项目配置运行一个spider</li>
+                </ul>
+            </div>
         <li id='h4'>web开发</li>
             <div>
                 <li>Flask框架</li>
@@ -770,7 +815,7 @@
                         #定义路由
                         @app.route('/index')
                         def index():
-                            html="<div> hello world </div>"
+                            html="&lt;div&gt; hello world &lt;/div&gt;"
                             return html
                         if __name__=='__main__':
                             #开启调试服务器
