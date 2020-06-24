@@ -690,22 +690,29 @@
             <div>
                 <ul type='square'>
                     <pre>
-                        from locust import HttpLocust,TaskSet,task
+                        from locust import events,TaskSet,task,HttpUser,between
+                        #任务开始执行
+                        @events.test_start.add_listener
+                        def on_test_start(**kwargs):
+                            print("A new test is starting")
+                        #任务结束执行
+                        @events.test_stop.add_listener
+                        def on_test_stop(**kwargs):
+                            print("A new test is ending")
                         #定义用户行为
-                        class Test(TaskSet):
+                        class ForumSection(TaskSet):
                             #用户执行权重(数值越大,执行频率越高)
                             @task(1)
-                            def test(self):
-                                self.client.get('/')
-                        class Start(HttpLocust):
+                            def create_thread(self):
+                                data={}
+                                self.client.post(url="/xx/yy",data=data) 
+                        class LoggedInUser(HttpUser):
                             #指向用户行为
-                            task_set = Test
-                            #负载任务之间执行的最小等待时间(ms)
-                            min_wait = 3000
-                            #负载任务之间执行的最大等待时间(ms)
-                            max_wait = 6000
+                            tasks = {ForumSection:2}
+                            #负载任务之间执行等待区间(s)
+                            wait_time = between(3, 5)
                             #指向负载ip
-                            host = 'http://192.168.199.207:32768'
+                            host='https://www.wowo.com'
                     </pre>
                     <li>locust -f test.py;启动GUI模式，浏览器输入http:localhost:8089打开GUI</li>
                     <li>locust –f test.py –-no-web –c 10 –r 2 –t 1m –-csv=D:\report</li>
@@ -715,6 +722,11 @@
                             <li>-r;设置每秒启动虚拟用户数</li>
                             <li>-t;设置运行时间（h/m/s）</li>
                             <li>--csv;表示csv测试报告生成位置</li>
+                        </ol>
+                    <li>分布式压测</li>
+                        <ol type="A">
+                            <li>locust -f file --master;控制机</li>
+                            <li>locust -f file --slave --master-host='main_ip';执行机</li>
                         </ol>
                 </ul>
             </div>

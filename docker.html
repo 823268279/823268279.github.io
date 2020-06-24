@@ -19,8 +19,9 @@
         <li id='h4'>登出docker hub</li>
             <div>docker logout;</div>
         <li id='h4'>启动docker守护进程</li>
-        <li>docker search docker_name;搜索docker镜像</li>
             <div>service docker start;</div>
+        <li id='h4'>搜索docker镜像</li>
+            <div>docker search docker_name;</div>
         <li id='h4'>获取docker镜像</li>
             <div>docker pull docker_name;</div>
         <li id='h4'>推送本地镜像到docker hub(登录状态)</li>
@@ -51,15 +52,17 @@
         <li id='h4'>查看容器底层信息</li>
             <div>docker inspect docker_id;</div>
         <li id='h4'>查看运行中的容器</li>
-            <div>docker ps;</div>
+            <div>docker ps;(-a查看所有)</div>
         <li id='h4'>删除容器</li>   
-            <div>docker rm -f docker_id;</div>
+            <div>docker rm docker_id;(-f表示强制)</div>
         <li id='h4'>导出容器</li>
             <div>docker export docker_id xxx.tar;</div>
         <li id='h4'>导出容器</li>
             <div>cat docker/xxx.tar | docker import REPOSITORY:TA;</div>
         <li id='h4'>查看本地所有镜像</li>
             <div>docker images;</div>
+        <li id='h4'>删除本地镜像</li>
+            <div>docker rmi images_id;(-f表示强制)</div>
         <li id='h4'>修改容器之后创建成新容器</li>   
             <div>docker commit -m='description' -a='auther' docker_id new_docker_name:tag;</div>
         <li id='h4'>docker文件双向复制</li>   
