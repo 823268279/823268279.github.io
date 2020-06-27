@@ -41,12 +41,49 @@
             <div>
                 <ul type="square">
                     <li>id选择器(用“#”表示，再用id进行选择)</li>
+                        <pre>
+                            #{background:red;}
+                        </pre>
                     <li>class选择器(用“.”表示，再用class进行选择)</li>
+                        <pre>
+                            .{background:red;}
+                        </pre>
+                    <li>派生选择器</li>
+                        <pre>
+                            li strong{background:red;}
+                        </pre>
                     <li>群组选择器(用标签选择)</li>
                     <li>通配选择器(用“*”表示，作用全局)</li>
+                        <pre>
+                            *{background:red;}
+                        </pre>
                     <li>层次选择器(按标签层选择)</li>
                     <li>属性选择器(按标签中的属性进行选择)</li>
+                        <pre>
+                            input[type="text"]{background:red;}
+                        </pre>
                     <li>伪类选择器(用于向某些标签添加特殊效果)</li>
+                        <ol type="A">
+                            <li>一般伪类选择器</li>
+                                <pre>
+                                    a:link{background:red;} 访问前渲染(只能给a标签)
+                                    a:visited{background:green;}；访问后渲染(只能给a标签)
+                                    a:hover{background:violet;}；鼠标移入时才会渲染(适用所有标签)
+                                    a:active{background:black;}；鼠标按下时才会渲染(适用所有标签)
+                                    div:after{content:"text"}；在元素文本之后添加text
+                                    div:before{content:'text'}；在元素文本之前添加text
+                                    :checked{width:100px;height:100px;} 只渲染含有checked属性的元素(checkbox)
+                                    :focus{background-color:red;} 只渲染含有focus属性的元素(input)
+                                </pre>
+                            <li>结构伪类选择器</li>
+                                <pre>
+                                    li:nth-of-type(x){background-color:red;}；表示按类型选择渲染，x从1开始(不受其他标签影响)
+                                    li:nth-child(x){background-color:red;}；表示按类型选择渲染，x从1开始(受其他标签影响)
+                                    li:first-of-type{background-color:red;}；只渲染该type的第一个标签
+                                    li:last-of-type{background-color:blue;}；只渲染该type的最后一个标签
+                                    li:only-of-type{background-color:green;}；只渲染该type只有一个标签时
+                                </pre>
+                        </ol>   
                 </ul>
             </div>
         <li id='h4'>背景样式</li>
@@ -70,8 +107,8 @@
                         </ol>
                     <li>background-attachment:x;背景图片随滚动条的移动方式</li>
                         <ol>
-                            <li>scroll;背景图片是按当前元素进行偏移()</li>
-                            <li>fixed;背景图片是按照浏览器进行偏移</li>
+                            <li>scroll;背景位置是按当前元素进行偏移()</li>
+                            <li>fixed;背景位置是按照浏览器进行偏移</li>
                         </ol>
                 </ul>
             </div>
@@ -290,22 +327,41 @@
                         </ol>
                 </ul>
             </div>
+        <li id="h4">float浮动</li>
+            <div>
+                <ul type='square'>
+                    <li>定义：脱离文档流，延迟父容器靠左或靠右进行排列</li>
+                    <li>注意点</li>
+                        <ol type="A">
+                            <li>只会影响到后面的元素</li>
+                            <li>元素的内容默认提升半层</li>
+                            <li>默认宽根据内容决定</li>
+                            <li>根据父容器换行排列</li>
+                        </ol>
+                    <li>清除浮动：清除之后不受浮动元素影响</li>
+                        <ol type="A">
+                            <li>clear left:清除左浮动</li>
+                            <li>clear right:清除右浮动</li>
+                            <li>clear both:清除左右浮动</li>
+                        </ol>
+                </ul>
+            </div>
         <li id='h4'>position:x;定位</li>
             <div>
                 <ul type='square'>
                     <li>static;静态定位(默认值)</li>
                         <div>文档流，忽略定位</div>
                     <li>adsolute;绝对定位</li>
+                        <div>可以使块元素具有内联特性</div>
+                        <div>可以是内联元素具有块特性</div>
                         <div>脱离文档流，根据定位显示，依据父级元素为参照物</div>
                     <li>relative;相对定位</li>
                         <div>文档流，根据定位显示</div>
                     <li>fixed;固定定位</li>
                         <div>脱离文档流，根据定位显示，依据浏览器窗口为参照物</div>
+                    <li>z-index；调整定位层级</li>
                 </ul>
             </div>
     </ol>
-
-    <!-- 练习 -->
-    <a href="http://www.baidu.com" >百度</a>
 </body>
 </html>
