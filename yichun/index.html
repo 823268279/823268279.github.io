@@ -1,0 +1,123 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="back">
+        <div class="head">
+            <div class="head_title">
+                <div class="head_left">
+                    <a>
+                        <img src="./img/icon_flag1.png" alt="">中文
+                    </a>
+                    <a>|</a>
+                    <a href="#">ENGLISH</a>
+                    <img class="logo" src="./img/201801040847344734.png" alt="品牌">
+                </div>
+                <div class="head_right">
+                    <a href="">会员登录
+                        <img src="./img/icon_login1.png" alt="">
+                    </a>
+                    <a>|</a>
+                    <a>寻找门店
+                        <img src="./img/icon_map1.png" alt="">
+                    </a>
+                    <input class="search" type="text" value="清输入关键字">搜索
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#">本季新品</a>
+                </li>
+                <dl>
+                    <dd>
+                        <a href="#">女装</a>
+                    </dd>
+                    <dd>
+                        <a href="#">男装</a>
+                    </dd>
+                    <dd>
+                        <a href="#">童装</a>
+                    </dd>
+                    <dd>
+                        <a href="#">陪衬</a>
+                    </dd>
+                    <dd>
+                        <a href="#">联名</a>
+                    </dd>
+                </dl>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function()
+       {
+        $("#mymenu dd").hide();
+        $("#mymenu dt").each(function(){
+      var dt = $(this);
+     
+      //找到dt下的dd
+      var objList =new Array();
+      var tmpDD = dt.next();
+      //循环查找dt下的所有dd，并且不查找下一个dt的内容
+      while(tmpDD.attr("tagName")!=null && tmpDD.attr("tagName")!="DT")
+      {
+       //push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+       objList.push(tmpDD);
+       //循环添加获取到的dd元素
+       tmpDD = tmpDD.next();
+      }
+      //alert(dt.html()+" 有:"+objList.length+"个dd");
+     
+      dt.toggle(
+       function(){
+       $(objList).each(function(){
+       $(this).show();
+       });
+      },
+      
+      function(){
+       $(objList).each(function(){
+       $(this).hide();
+       });
+       }
+      );
+     
+      });
+
+       });
+    </script>
+</head>
+<body>
+    <div id="mymenu">
+              <dl>
+                <dt><a href="#">用户管理</a></dt>
+                <dd><a href="#">用户查询</a></dd>
+                <dd><a href="#">添加用户</a></dd>
+                <dd><a href="#">用户组</a></dd>
+                <dt><a href="#">课程管理</a></dt>
+                <dd><a href="#">课程列表</a></dd>
+                <dd><a href="#">添加课程</a></dd>
+             </dl>
+           </div>
+</body>
+</html>

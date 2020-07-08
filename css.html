@@ -276,8 +276,14 @@
                 <ul type='square'>
                     <li>content:内容区域，由width和height决定</li>
                     <li>padding：内边距，由像素控制距离，不能为负数</li>
-                    <li>border：包装盒，占5个固定像素</li>
+                    <li>border：包装盒，占10个固定像素</li>
                     <li>margin：外边距，由像素控制距离，可以为负数</li>
+                        <ol type="A">
+                            <li>盒子之间同时存在上下margin，margin距离会叠加(叠加值取最大值)；只用一个margin即可解决</li>
+                            <li>嵌套时，margin-top会影响到父元素；用padding替代父容器进行解决</li>
+                        </ol>
+                    <li>box-sizing:border-box;盒模型自适应</li>
+                    
 
                 </ul>
             </div>

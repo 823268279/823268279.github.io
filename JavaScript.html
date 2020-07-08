@@ -74,6 +74,41 @@
 
                 </ul>
             </div>
+        <li id="h4">Date对象：表示日期和时间</li>
+            <ul type='square'>
+                <li>定义：var now = new Date()</li>
+                <li>年：now.getFullYear()</li>
+                <li>月：now.getMonth()</li>
+                <li>日：now.getDate()</li>
+                <li>星期：now.getDay()</li>
+                <li>时：now.getHours()</li>
+                <li>分：now.getMinutes()</li>
+                <li>秒：now.getSeconds()</li>
+                <li>毫秒：now.getUTCMilliseconds()</li>
+                <li>number形式的时间戳：now.getTime()</li>
+            </ul>
+        <li id="h4">
+            <ul type='square'>
+                <li>json序列化</li>
+                    <pre>
+                        var wowo = {
+                            name:'wowo',
+                            age:25
+                        }
+                        var json = JSON.stringify(wowo)
+                        console.log(json)
+                        // {"name":"wowo","age":25}
+                    </pre>
+                <li>json反序列化</li>
+                    <pre>
+                        var wowo = '{"name":"wowo", \
+                                    "age":25}'
+                        var json = JSON.parse(wowo)
+                        console.log(json)
+                        // Object {name: "wowo", age: 25}
+                    </pre>
+            </ul>
+        </li>
         <li id='h4'>条件判断</li>
             <div>
                 <pre>
@@ -140,7 +175,301 @@
                     </pre>
                 </ul>
             </div>
-            <li id='h4'>函数</li>
+        <li id='h4'>函数</li>
+            <div>
+                <ul type='square'>
+                    <li>定义函数</li>
+                        <pre>
+                            function abs(x){
+                                console.log(x)
+                            }
+                            abs(3)
+                        </pre>
+                    <li>匿名函数</li>
+                        <pre>
+                            var abs=function(x){
+                                console.log(x)
+                            }
+                            abs(3)
+                        </pre>
+                    <li>arguments关键字：获取所有函数入参</li>
+                        <pre>
+                            var abs=function(){
+                                for (var i=0;i<arguments.length;i++){
+                                    console.log(arguments[i])
+                                }
+                            }
+                            abs(3,4)
+                        </pre>
+                    <li>rest参数：获取除了默认参数之外的入参</li>
+                        <pre>
+                            var abs=function(x,...rest){
+                                console.log(x)
+                                console.log(rest)
+                            }
+                            abs(1,2,3,4)
+                        </pre>
+                    <li>块级作用域</li>
+                        <ol type="A">
+                            <li>let申明块级变量</li>
+                            <li>const声明块级常量</li>
+                        </ol>
+                    <li>解构赋值</li>
+                        <pre>
+                            var [x,y,z] = [1,2,3]
+                            console.log(x)
+                            console.log(y)
+                            console.log(z)
+                        </pre>
+                </ul>
+            </div>
+        <li id='h4'>高阶函数</li>
+            <div>
+                <ul tupe='square'>
+                    <li>map函数：把一个function作用到Array的每一个元素上</li>
+                        <pre>
+                            var arr = [1,2,3,4];
+                            var new_arr = arr.map(String)
+                            console.log(new_arr)
+                            // Array(4) ["1", "2", "3", "4"]
+                        </pre>
+                    <li>reduce函数：把一个function作用到Array的每一个元素上;
+                        这个function必须接收两个参数，并把结果继续和序列的下一个
+                        元素做累计计算。</li>
+                        <pre>
+                            var arr = [1,2,3,4];
+                            var new_arr = arr.reduce(function (x,y){
+                                return x+y
+                            })
+                            console.log(new_arr)
+                            // 10
+                        </pre>
+                    <li>filter函数：把一个function作用到Array的每一个元素上;
+                        根据返回值是true或false决定是否保留元素。</li>
+                        <pre>
+                            var arr = [1,2,3,4];
+                            var new_arr = arr.filter(function(x){
+                                return x % 2 !==0
+                            })
+                            console.log(new_arr)
+                            // Array(2) [1, 3]
+                        </pre>
+                    <li>sort排序(直接排序会按ASCII进行比较)</li>
+                        <pre>
+                            var arr = [2,3,4,1];
+                            var new_arr = arr.sort(function(x,y){
+                                if (x < y){
+                                    return -1
+                                }
+                                if (x > y){
+                                    return 1
+                                }
+                                return 0
+                            })
+                            console.log(new_arr)
+                            // Array(4) [1, 2, 3, 4]
+                        </pre>
+                    <li>every()：判断数组的所有元素是否满足测试条件</li>
+                        <pre>
+                            var arr = [2,3,4,1];
+                            var new_arr = arr.every(function(x){
+                                return x > 2
+                            })
+                            console.log(new_arr)
+                            // false
+                        </pre>
+                    <li>find()：查找符合条件的第一个元素，找不到就返回undefined</li>
+                        <pre>
+                            var arr = [1,2,3,4];
+                            var new_arr = arr.find(function(x){
+                                return x == 0
+                            })
+                            console.log(new_arr)
+                            // undefined
+                        </pre>
+                    <li>findIndex()：查找符合条件的第一个元素，找到就返回该元素的索引</li>
+                        <pre>
+                            var arr = [1,2,3,4];
+                            var new_arr = arr.findIndex(function(x){
+                                return x == 3
+                            })
+                            console.log(new_arr)
+                            // 2
+                        </pre>
+                    <li>闭包：函数作为返回值</li>
+                        <pre>
+                            function lazy_sum(arr){
+                                var sum = function(){
+                                    return arr.reduce(function(x,y){
+                                        return x + y
+                                    })
+                                }
+                                return sum
+                            }
+                            var f = lazy_sum([1,2,3,4])
+                            console.log(f)
+                            // function(){...}
+                            console.log(f(x))
+                            // 10
+                        </pre>
+                    <li>箭头函数</li>
+                        <pre>
+                            var add = x => x+x 
+                            console.log(add(3)) 
+                        </pre>
+                </ul>
+                <li>generator(生成器)：可以返回多次的函数</li>
+                    <pre>
+                        function* f(x){
+                            yield x+1
+                            yield x+2
+                            yield x+3
+                            return x+4
+                        }
+                        for (var x of f(0)){
+                            console.log(x)}
+                        // 1
+                        // 2
+                        // 3
+                    </pre>
+                <li>构造函数：可以构造对象的函数(通过new调用)</li>
+                    <pre>
+                        function Wowo(age,sex){
+                            this.age = age;
+                            this.sex = sex;
+                            this.showage = function(){
+                                console.log(this.age)
+                            }
+                            this.showsex = function(){
+                                console.log(this.sex)
+                            }
+                        }
+                        var x = new Wowo(25,'man')
+                        x.showage()
+                        x.showsex()
+                        // 25
+                        // man
+                    </pre>
+            </div>
+        <li id="h4">类</li>
+            <div>
+                <ul type='square'>
+                    <li>定义类</li>
+                        <pre>
+                            class Person{
+                                constructor(name){
+                                    this.name = name
+                                }
+                                say(){
+                                    console.log('hello：' + this.name)
+                                }
+                            }
+                            var wowo = new Person('wowo')
+                            wowo.say()
+                        </pre>
+                    <li>继承类：extends表示继承；super表示调用父类的构造函数</li>
+                        <pre>
+                            class People extends Person{
+                                constructor(name,grade){
+                                    super(name)
+                                    this.grade = grade
+                                }
+                                mygrade(){
+                                    console.log('my grade：' + this.grade)
+                                }
+                            }
+                            var coco = new People('coco',99)
+                            coco.say()
+                            coco.mygrade()
+                        </pre>
+                </ul>
+            </div>
+        <li id="h4">浏览器对象</li>
+           <div>
+               <ul type='square'>
+                   <li>window对象:全局作用域，表示浏览器窗口</li>
+                        <ol type="A">
+                            <li>window.innerWidth;获取浏览器窗口内部宽度</li>
+                            <li>window.innerHeight;获取浏览器窗口的内部高度</li>
+                            <li>window.outerWidth;获取浏览器窗口的整个高度</li>
+                            <li>window.outerHeight;获取浏览器窗口的整个宽度</li>
+                        </ol>
+                    <li>navigator对象：表示浏览器内核</li>
+                        <ol type='A'>
+                            <li>navigator.appName;浏览器名称</li>
+                            <li>navigator.appVersion;浏览器脚本</li>
+                            <li>navigator.language;浏览器设置的语言</li>
+                            <li>navigator.platform;操作系统类型</li>
+                            <li>navigator.userAgent;浏览器设定的User-Agent字符串</li>
+                        </ol>
+                    <li>screen对象：表示浏览器屏幕</li>
+                        <ol type="A">
+                            <li>screen.width;屏幕宽度</li>
+                            <li>screen.height;屏幕高度</li>
+                            <li>screen.colorDepth;颜色位数</li>
+                        </ol>
+                    <li>location对象：表示当前URL</li>
+                        <ol type="A">
+                            <li>location.protocol;当前URL的协议</li>
+                            <li>location.host;当前URL的主机名</li>
+                            <li>location.port;当前URL的端口</li>
+                            <li>location.pathname;当前URL的路径</li>
+                            <li>location.search;当前URL的参数</li>
+                            <li>location.hash;当前URL的锚</li>
+                        </ol>
+                    <li>document对象：表示当前DOM树的根节点</li>
+                        <ol type="A">
+                            <li>document.getElementById();用id定位DOM树</li>
+                            <li>document.getElementsByClassName;用class定位DOM树</li>
+                            <li>document.getElementsByTagName;用标签名定位DOM树</li>
+                            <li>document.cookie;获取cookie</li>
+                        </ol>
+                </ul>
+            </div>
+        <li id="h4">操作DOM</li>
+            <div>
+                <ul type='square'>
+                    <li>更新DOM</li>
+                        <ol type="A">
+                            <li>parent_element.innerHTML;更新整个标签</li>
+                            <li>parent_element.innerText;更新文本内容</li>
+                        </ol>
+                    <li>插入DOM</li>
+                        <ol type="A">
+                            <li>parent_element.appendChild(child_element);把一个子节点添加到父节点的最后一个子节点</li>
+                            <li>parent_element.insertBefore(newelement,referenceElement);把子节点插入到指定位置</li>
+                        </ol>
+                    <li>删除DOM</li>
+                    <ol type="A">
+                        <li>parent_element.removeChild(child_element);调用父元素的removeChild()即可删除子元素</li>
+                    </ol>
+                </ul>
+           </div>
+        <li id="h4">jQuery</li>
+           <div>
+               <ul type='square'>
+                   <li>层级选择器</li>
+                        <ol type="A">
+                            <li>$('ancestor descendant')适用于祖先元素和子孙元素之间</li>
+                            <li>$('parent>child');适用于父元素和子元素之间</li>
+                        </ol>
+                    <li>过滤器</li>
+                        <ol type="A">
+                            <li>$('group_element:first-child');获取第一个标签</li>
+                            <li>$('group_element:last-child');获取最后一个标签</li>
+                            <li>$('group_element:child(n)');获取第n个标签，n从1开始</li>
+                            <li>$('group_element:child(even)');获取序号为偶数的标签</li>
+                            <li>$('group_element:child(odd)');获取序号为奇数的标签</li>
+                        </ol>
+                    <li>查找</li>
+                        <ol type="A">
+                            <li>parent_element.find(#vv);查找父元素下的id='vv'的标签</li>
+                            <li>parent_element.find(.zz);查找父元素下的class='zz'的标签</li>
+                            <li>parent_element.find([name=rr]);查找父元素下的name='rr'的标签</li>
+                            <li>element.parent();查找父元素下的name='rr'的标签</li>
+                        </ol>
+               </ul>
+           </div>
     </ol>
 </body>
 </html>
