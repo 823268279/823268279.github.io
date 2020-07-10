@@ -431,17 +431,17 @@
                 <ul type='square'>
                     <li>更新DOM</li>
                         <ol type="A">
-                            <li>parent_element.innerHTML;更新整个标签</li>
-                            <li>parent_element.innerText;更新文本内容</li>
+                            <li>parent_node.innerHTML;更新整个标签</li>
+                            <li>parent_node.innerText;更新文本内容</li>
                         </ol>
                     <li>插入DOM</li>
                         <ol type="A">
-                            <li>parent_element.appendChild(child_element);把一个子节点添加到父节点的最后一个子节点</li>
-                            <li>parent_element.insertBefore(newelement,referenceElement);把子节点插入到指定位置</li>
+                            <li>parent_node.appendChild(child_element);把一个子节点添加到父节点的最后一个子节点</li>
+                            <li>parent_node.insertBefore(newelement,referenceElement);把子节点插入到指定位置</li>
                         </ol>
                     <li>删除DOM</li>
                     <ol type="A">
-                        <li>parent_element.removeChild(child_element);调用父元素的removeChild()即可删除子元素</li>
+                        <li>parent_node.removeChild(child_element);调用父元素的removeChild()即可删除子元素</li>
                     </ol>
                 </ul>
            </div>
@@ -455,20 +455,83 @@
                         </ol>
                     <li>过滤器</li>
                         <ol type="A">
-                            <li>$('group_element:first-child');获取第一个标签</li>
-                            <li>$('group_element:last-child');获取最后一个标签</li>
-                            <li>$('group_element:child(n)');获取第n个标签，n从1开始</li>
-                            <li>$('group_element:child(even)');获取序号为偶数的标签</li>
-                            <li>$('group_element:child(odd)');获取序号为奇数的标签</li>
+                            <li>$('group_node:first-child');获取第一个标签</li>
+                            <li>$('group_node:last-child');获取最后一个标签</li>
+                            <li>$('group_node:child(n)');获取第n个标签，n从1开始</li>
+                            <li>$('group_node:child(even)');获取序号为偶数的标签</li>
+                            <li>$('group_node:child(odd)');获取序号为奇数的标签</li>
                         </ol>
                     <li>查找</li>
                         <ol type="A">
-                            <li>parent_element.find(#vv);查找父元素下的id='vv'的标签</li>
-                            <li>parent_element.find(.zz);查找父元素下的class='zz'的标签</li>
-                            <li>parent_element.find([name=rr]);查找父元素下的name='rr'的标签</li>
-                            <li>element.parent();查找父元素下的name='rr'的标签</li>
+                            <li>parent_node.find(#vv);查找父元素下的id='vv'的标签</li>
+                            <li>parent_node.find(.zz);查找父元素下的class='zz'的标签</li>
+                            <li>parent_node.find([name=rr]);查找父元素下的name='rr'的标签</li>
+                            <li>node.parent();查找父标签</li>
+                            <li>node.prev();查找同一层级的上一个标签</li>
+                            <li>node.next();查找同一层级的下一个标签/li>
                         </ol>
-               </ul>
+                    <li>过滤</li>
+                        <ol type="A">
+                            <li>group_node.filter('#ff');过滤掉id='ff'的标签</li>
+                            <li>group_node.map();将所有标签转化为其他对象</li>
+                            <li>group_node.first();获取第一个标签</li>
+                            <li>group_node.last();获取最后一个标签</li>
+                            <li>group_node.slice(x,y);获取x到y的之间的标签(同数组方法)</li>
+                        </ol>
+                    <li>操作DOM</li>
+                        <ol type='A'>
+                            <li>node.text();不传表示获取标签文本，传入表示修改文本</li>
+                            <li>node.text();不传表示获取元素HTML，传入表示修改HTML</li>
+                            <li>node.css(name,value);只传name表示获取css属性，既传name又传value表示设置css样式</li>
+                            <li>node.hasClass('xx')判断标签的class属性是否包含'xx'</li>
+                            <li>node.addClass('xx')为标签添加class='xx'这个属性</li>
+                            <li>node.removeClass('xx')删除标签中class='xx'这个属性</li>
+                            <li>node.hide()隐藏标签(不会改变DOM树的结构)</li>
+                            <li>node.show()显示标签</li>
+                            <li>$(window).width();浏览器可视窗口宽度</li>
+                            <li>$(window).height();浏览器可视窗口高度</li>
+                            <li>$(document).width();HTML文档宽度</li>
+                            <li>$(document).height();HTML文档高度</li>
+                            <li>$(node).width();不传表示获取标签宽度，传入表示设置标签宽度</li>
+                            <li>$(node).height();不传表示获取标签高度，传入表示设置标签高度</li>
+                            <li>$(node).attr('name','value');只传name表示获取name属性的value；既传name又传value表示设置name='value'的属性</li>
+                            <li>$(node).removeattr('name');删除name属性</li>
+                            <li>node.append('html');在子标签之后添加一个新标签</li>
+                            <li>node.prepend('html');在子标签之前添加一个新标签</li>
+                            <li>node.after('html');在兄弟标签之后添加一个新标签</li>
+                            <li>node.before('html');在兄弟标签之前添加一个新标签</li>
+                            <li>node.remove();删除标签</li>
+                        </ol>
+                    <li>鼠标事件</li>
+                        <ol type="A">
+                            <li>node.click(function);鼠标单击时触发函数</li>
+                            <li>node.dblclick(function);鼠标双击时触发函数</li>
+                            <li>node.mouseenter;鼠标进入时触发函数</li>
+                            <li>node.mouseleave;鼠标移除时触发函数</li>
+                            <li>node.mousemove;鼠标在DOM内部移动时触发函数</li>
+                            <li>node.hover;鼠标进入和退出时触发两个函数</li>
+                        </ol>
+                    <li>键盘事件</li>
+                        <ol type="A">
+                            <li>node.keydown(function);键盘每次按下时触发函数</li>
+                            <li>node.keyup(function);键盘每次松开时触发函数</li>
+                            <li>node.keypress(function);键盘每按一次触发函数</li>
+                        </ol>
+                    <li>其他事件</li>
+                        <ol type="A">
+                            <li>node.focus(function);当DOM获得焦点时触发函数</li>
+                            <li>node.blur(function);当DOM失去焦点时触发函数</li>
+                            <li>node.change(function);当&gt;input&lt;,&gt;select&lt;的内容改变时触发函数</li>
+                            <li>node.submit(function);当&gt;form&lt;表单提交时触发函数</li>
+                            <li>node.ready(function);当页面被加载并且DOM树完成初始化后触发函数</li>
+                            <li>node.val('xxx');自动往输入框输入内容</li>
+                            <li>node.change(function());当输入框内容发生改变时触发函数(配合var可自动触发)</li>
+                        </ol>
+                    <li>取消事件</li>   
+                        <ol type="A">
+                            <li>node.off('event',function);用于解除已经绑定的事件</li>
+                        </ol>
+                </ul>
            </div>
     </ol>
 </body>

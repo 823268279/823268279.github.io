@@ -1,4 +1,12 @@
+var ul = $('#test-div>input');
+var x=function(){
+    console.log('wowo')
+}
 
-var swf = $('#scheme')
-zz=mon.parent()
-console.log(zz)
+var y=function(){
+    console.log('hello')
+}
+ul.val('change it!');
+ul.change(y())
+
+
