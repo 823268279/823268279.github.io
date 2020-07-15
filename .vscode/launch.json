@@ -10,7 +10,7 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
-            "file": "${workspaceFolder}/study.html"
-        }
+            "file": "${workspaceFolder}/ajax练习/study.html"
+        }   
     ]
 }
