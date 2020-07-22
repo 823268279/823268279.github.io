@@ -220,15 +220,28 @@
                 </ul>
 
             </div>
-        <li id='h4'>链接样式</li>
+        <li id='h4'>伪类</li>
             <div>
                 <ul type='square'>
-                    <li>a:lick{样式};链接未访问前的状态</li>
-                    <li>a:visited{样式};已被访问的链接</li>
-                    <li>a:hover{样式};鼠标指针移动到链接上</li>
-                    <li>a:active:{样式};正在被点击的链接</li>
+                    <li>:lick{style};向未被访问的链接添加样式</li>
+                    <li>:visited{style};向已被访问的链接添加样式</li>
+                    <li>:hover{style};当鼠标悬浮在元素上时，向元素添加样式</li>
+                    <li>:active:{style};向被激活的元素添加样式</li>
+                    <li>:focus;向拥有键盘输入焦点的元素添加样式</li>
+                    <li>:first-child{};向元素的第一个子元素添加样式</li>
+                    <li>:lang{};向带有指定lang属性的元素添加样式</li>
                 </ul>
             </div>
+        <li id="h4">
+            <div>
+                <ul type='square'>
+                    <li>:first-letter;向文本的第一个字母添加特殊样式</li>
+                    <li>:first-line;向文本的首行添加特殊样式</li>
+                    <li>:before;在元素之前添加内容</li>
+                    <li>:after;在元素之后添加内容</li>
+                </ul>
+            </div>
+        </li>
         <li id='h4'>列表样式</li>
             <div>
                 <ul type='square'>
@@ -313,16 +326,18 @@
         <li id='h4'>溢出隐藏</li>
             <div>
                 <ul type='square'>
+                    <li>overflow:visible;默认值，内容不会被剪切，会呈现在元素框之外</li>
                     <li>overflow:hidden;用剪切的方式隐藏溢出字体</li>
                     <li>overflow:scroll;用滑动条的方式隐藏字体(没有溢出也会显示滑动条)</li>
                     <li>overflow:auto;用滑动条的方式隐藏字体(只有溢出才会加滑动条)</li>
+                    <li>overflow:inherit;从父元素继承overflow属性的值</li>
                 </ul>
             </div>
         <li id='h4'>透明度与手势</li>
             <div>
                 <ul type='square'>
                     <li>opacity:0.5;所有子标签透明</li>
-                    <li>background-rgba(255,0,0,0.3);只有背景色会透露</li>
+                    <li>background-rgba(255,0,0,0.3);只有背景色会透明</li>
                     <li>cursor:x;手势</li>
                         <ol type='A'>
                             <li>cursor:default;鼠标触碰变箭头图标</li>

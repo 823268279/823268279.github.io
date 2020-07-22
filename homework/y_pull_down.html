@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            margin-left: 50px;
+        }
+        div{
+            width: 800px;
+            margin: 0px auto;
+        }
+        li{
+            float: left;
+            margin-left: 50px;
+            text-align: center;
+        }
+        dl{
+            width: 150px;
+            height: 70px;
+            margin-bottom: 0px;
+        }
+        dt{
+            display: none;
+            font-size: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>衣服
+                <dl>
+                    <dt>短袖</dt>
+                    <dt>外套</dt>
+                </dl>
+            </li>
+            <li>裤子
+                <dl>
+                    <dt>休闲裤</dt>
+                    <dt>牛仔裤</dt>
+                </dl>
+            </li>
+            <li>鞋子
+                <dl>
+                    <dt>运动鞋</dt>
+                    <dt>皮鞋</dt>
+                </dl>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var lis=document.getElementsByTagName('li')
+        for(var i=0;i<lis.length;i++){
+            var hidden=function(event){
+                var li=event.target
+                li.style.color='red'
+                var dt=li.getElementsByTagName('dt')
+                for(var n=0;n<dt.length;n++){
+                    if(dt[n].style.display=='' || dt[n].style.display=='none'){
+                        dt[n].style.display='inline-block'
+                    }else{
+                        dt[n].style.display='none'
+                        li.style.color=''
+                    }
+                }
+            }
+            lis[i].onclick=hidden
+        }
+    </script>
+</body>
+</html>

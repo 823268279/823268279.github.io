@@ -195,9 +195,8 @@
                     <li>arguments关键字：获取所有函数入参</li>
                         <pre>
                             var abs=function(){
-                                for (var i=0;i<arguments.length;i++){
-                                    console.log(arguments[i])
-                                }
+                                console.log(arguments[0])
+                                console.log(arguments[1])
                             }
                             abs(3,4)
                         </pre>
@@ -416,6 +415,7 @@
                             <li>location.pathname;当前URL的路径</li>
                             <li>location.search;当前URL的参数</li>
                             <li>location.hash;当前URL的锚</li>
+                            <li>location.href;当前完整url</li>
                         </ol>
                     <li>document对象：表示当前DOM树的根节点</li>
                         <ol type="A">
@@ -431,19 +431,34 @@
                 <ul type='square'>
                     <li>更新DOM</li>
                         <ol type="A">
-                            <li>parent_node.innerHTML;更新整个标签</li>
-                            <li>parent_node.innerText;更新文本内容</li>
+                            <li>node.innerHTML;更新整个标签</li>
+                            <li>node.innerText;更新文本内容</li>
                         </ol>
+                    <li>创建DOM</ul>>
+                        <ol>
+                            <li>var create_node = document.createElement('p');创建一个标签</li>
+                            <li>create_node.id = 'zz';为标签添加id选择器</li>
+                            <li>create_node.innerText = 'text';为标签添加文本内容</li>
+                        </ol>
+                    
                     <li>插入DOM</li>
                         <ol type="A">
-                            <li>parent_node.appendChild(child_element);把一个子节点添加到父节点的最后一个子节点</li>
-                            <li>parent_node.insertBefore(newelement,referenceElement);把子节点插入到指定位置</li>
+                            <li>parent_node.appendChild(create_node);把一个子节点添加到父节点的最后一个子节点</li>
+                            <li>parent_node.insertBefore(create_node,reference_node);把子节点插入到指定位置</li>
                         </ol>
                     <li>删除DOM</li>
                     <ol type="A">
-                        <li>parent_node.removeChild(child_element);调用父元素的removeChild()即可删除子元素</li>
+                        <li>parent_node.removeChild(child_node);调用父元素的removeChild()即可删除子元素</li>
                     </ol>
                 </ul>
+           </div>
+        <li id="h4">绑定事件</li>
+           <div>
+               <ul type='square'>
+                   <li>node.onlick=function;鼠标点击时触发事件</li>
+                   <li>node.onload=function;html加载完成时触发事件</li>
+                   <li>node.addEventListener('click',function);监听事件，可以添加多个事件</li>
+               </ul>
            </div>
         <li id="h4">jQuery</li>
            <div>
@@ -478,6 +493,25 @@
                             <li>group_node.last();获取最后一个标签</li>
                             <li>group_node.slice(x,y);获取x到y的之间的标签(同数组方法)</li>
                         </ol>
+                    <li>隐藏/显示</li>
+                        <ol type="A">
+                            <li>$(selector).hide()隐藏标签(不会改变DOM树的结构)</li>
+                            <li>$(selector).show()显示标签</li>
+                            <li>$(selector).toggle();即可显示又可隐藏</li>
+                        </ol>
+                    <li>淡入淡出</li>
+                        <ol type="A">
+                            <li>$(selector).fadeIn(speed,function);淡入已隐藏的元素</li>
+                            <li>$(selector).fadeOut(speed,function);淡出可见的元素</li>
+                            <li>$(selector).fadeToggle(speed,function);既可淡出又可淡入</li>
+                            <li>$(selector).fadeTo(speed,function);允许渐变为给定的不透明度</li>
+                        </ol>
+                    <li>滑动</li>
+                        <ol type="A">
+                            <li>$(selector).slideDown(speed,function);滑出已隐藏的元素</li>
+                            <li>$(selector).slideUp(speed,function);滑入可见的元素</li>
+                            <li>$(selector).slideToggle(speed,function);既可滑出又可滑入</li>
+                        </ol>
                     <li>操作DOM</li>
                         <ol type='A'>
                             <li>node.text();不传表示获取标签文本，传入表示修改文本</li>
@@ -486,8 +520,6 @@
                             <li>node.hasClass('xx')判断标签的class属性是否包含'xx'</li>
                             <li>node.addClass('xx')为标签添加class='xx'这个属性</li>
                             <li>node.removeClass('xx')删除标签中class='xx'这个属性</li>
-                            <li>node.hide()隐藏标签(不会改变DOM树的结构)</li>
-                            <li>node.show()显示标签</li>
                             <li>$(window).width();浏览器可视窗口宽度</li>
                             <li>$(window).height();浏览器可视窗口高度</li>
                             <li>$(document).width();HTML文档宽度</li>
@@ -504,31 +536,32 @@
                         </ol>
                     <li>鼠标事件</li>
                         <ol type="A">
-                            <li>node.click(function);鼠标单击时触发函数</li>
-                            <li>node.dblclick(function);鼠标双击时触发函数</li>
-                            <li>node.mouseenter;鼠标进入时触发函数</li>
-                            <li>node.mouseleave;鼠标移除时触发函数</li>
-                            <li>node.mousemove;鼠标在DOM内部移动时触发函数</li>
-                            <li>node.hover;鼠标进入和退出时触发两个函数</li>
+                            <li>node.click(function);鼠标单击时触发事件</li>
+                            <li>node.dblclick(function);鼠标双击时触发事件</li>
+                            <li>node.mouseenter(function);鼠标进入时触发事件</li>
+                            <li>node.mouseleave(function);鼠标移除时触发事件</li>
+                            <li>node.mousemove(function);鼠标在DOM内部移动时触发事件</li>
+                            <li>node.hover();鼠标进入和退出时触发两个事件</li>
                         </ol>
                     <li>键盘事件</li>
                         <ol type="A">
-                            <li>node.keydown(function);键盘每次按下时触发函数</li>
-                            <li>node.keyup(function);键盘每次松开时触发函数</li>
-                            <li>node.keypress(function);键盘每按一次触发函数</li>
+                            <li>node.keydown(function);键盘每次按下时触发事件</li>
+                            <li>node.keyup(function);键盘每次松开时触发事件</li>
+                            <li>node.keypress(function);键盘每按一次触发事件</li>
                         </ol>
                     <li>其他事件</li>
                         <ol type="A">
-                            <li>node.focus(function);当DOM获得焦点时触发函数</li>
-                            <li>node.blur(function);当DOM失去焦点时触发函数</li>
-                            <li>node.change(function);当&gt;input&lt;,&gt;select&lt;的内容改变时触发函数</li>
-                            <li>node.submit(function);当&gt;form&lt;表单提交时触发函数</li>
-                            <li>node.ready(function);当页面被加载并且DOM树完成初始化后触发函数</li>
+                            <li>node.focus(function);当DOM获得焦点时触发事件</li>
+                            <li>node.blur(function);当DOM失去焦点时触发事件</li>
+                            <li>node.change(function);当&gt;input&lt;,&gt;select&lt;的内容改变时触发事件</li>
+                            <li>node.submit(function);当&gt;form&lt;表单提交时触发事件</li>
+                            <li>node.ready(function);当页面被加载并且DOM树完成初始化后触发事件</li>
                             <li>node.val('xxx');自动往输入框输入内容</li>
-                            <li>node.change(function());当输入框内容发生改变时触发函数(配合var可自动触发)</li>
+                            <li>node.change(function());当输入框内容发生改变时触发事件(配合var可自动触发)</li>
                         </ol>
-                    <li>取消事件</li>   
+                    <li>事件绑定/解除</li>   
                         <ol type="A">
+                            <li>node.on('event',function);用于绑定事件</li>
                             <li>node.off('event',function);用于解除已经绑定的事件</li>
                         </ol>
                 </ul>

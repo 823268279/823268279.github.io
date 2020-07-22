@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,10 @@
 <body>
     <div id="back">
         <div class="head">
-            <div class="head_title">
+            <div class="title">
                 <div class="head_left">
                     <a>
-                        <img src="./img/icon_flag1.png" alt="">中文
+                        <img src="./img/icon_flag1.png" alt="语言">中文
                     </a>
                     <a>|</a>
                     <a href="#">ENGLISH</a>
@@ -26,98 +26,64 @@
                     <a>寻找门店
                         <img src="./img/icon_map1.png" alt="">
                     </a>
-                    <input class="search" type="text" value="清输入关键字">搜索
+                    <div class="service">
+                        <input class="search" type="text" >搜索
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a href="#">本季新品</a>
-                </li>
-                <dl>
-                    <dd>
-                        <a href="#">女装</a>
-                    </dd>
-                    <dd>
-                        <a href="#">男装</a>
-                    </dd>
-                    <dd>
-                        <a href="#">童装</a>
-                    </dd>
-                    <dd>
-                        <a href="#">陪衬</a>
-                    </dd>
-                    <dd>
-                        <a href="#">联名</a>
-                    </dd>
-                </dl>
-            </ul>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">本季新品</a>
+                    </li>
+                    <dl>
+                        <dd>
+                            <a href="#">女装</a>
+                        </dd>
+                        <dd>
+                            <a href="#">男装</a>
+                        </dd>
+                        <dd>
+                            <a href="#">童装</a>
+                        </dd>
+                        <dd>
+                            <a href="#">陪衬</a>
+                        </dd>
+                        <dd>
+                            <a href="#">联名</a>
+                        </dd>
+                    </dl>
+                </ul>
+            </div>
         </div>
     </div>
-    
-</body>
-</html> -->
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script type="text/javascript">
-       $(document).ready(function()
-       {
-        $("#mymenu dd").hide();
-        $("#mymenu dt").each(function(){
-      var dt = $(this);
-     
-      //找到dt下的dd
-      var objList =new Array();
-      var tmpDD = dt.next();
-      //循环查找dt下的所有dd，并且不查找下一个dt的内容
-      while(tmpDD.attr("tagName")!=null && tmpDD.attr("tagName")!="DT")
-      {
-       //push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
-       objList.push(tmpDD);
-       //循环添加获取到的dd元素
-       tmpDD = tmpDD.next();
-      }
-      //alert(dt.html()+" 有:"+objList.length+"个dd");
-     
-      dt.toggle(
-       function(){
-       $(objList).each(function(){
-       $(this).show();
-       });
-      },
-      
-      function(){
-       $(objList).each(function(){
-       $(this).hide();
-       });
-       }
-      );
-     
-      });
-
-       });
-    </script>
-</head>
-<body>
-    <div id="mymenu">
-              <dl>
-                <dt><a href="#">用户管理</a></dt>
-                <dd><a href="#">用户查询</a></dd>
-                <dd><a href="#">添加用户</a></dd>
-                <dd><a href="#">用户组</a></dd>
-                <dt><a href="#">课程管理</a></dt>
-                <dd><a href="#">课程列表</a></dd>
-                <dd><a href="#">添加课程</a></dd>
-             </dl>
-           </div>
+    <div id="bottom">
+        <div class="login">会员登录
+            <div>
+                <input type="text" placeholder="输入卡号">
+            </div>
+            <div>
+                <input type="text" placeholder="输入密码">
+            </div>
+            <div class="code">
+                <input style="width: 410px;" type="text" placeholder="输入验证码">
+                <img src="./img/code.png" alt="验证码">
+            </div>
+            <div>
+                <button>登录</button>
+            </div>
+            <div class="extend">
+                <img src="./img/weixin1.png" alt="微信">
+                <img src="./img/weibo1.png" alt="微博">
+                <img src="./img/youku1.png" alt="优酷">
+            </div>
+        </div>
+    </div>
+    <div id="end">
+        <p>版权所有 Copyright © 2007-2017 YISHION all rights reserved Powered by YISHION. 粤ICP备07502554号 站长统计</p>
+    </div>
 </body>
 </html>
+
+
+
