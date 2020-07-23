@@ -6,7 +6,7 @@
     <title>javascript</title>
     <style>
         h1{font: bolder italic 40px '微软雅黑';}
-        div{width: 600px;
+        div{width: 1200px;
             color: slateblue;}
         #h4{font: bolder italic 20px '微软雅黑';}
     </style>
@@ -75,40 +75,43 @@
                 </ul>
             </div>
         <li id="h4">Date对象：表示日期和时间</li>
-            <ul type='square'>
-                <li>定义：var now = new Date()</li>
-                <li>年：now.getFullYear()</li>
-                <li>月：now.getMonth()</li>
-                <li>日：now.getDate()</li>
-                <li>星期：now.getDay()</li>
-                <li>时：now.getHours()</li>
-                <li>分：now.getMinutes()</li>
-                <li>秒：now.getSeconds()</li>
-                <li>毫秒：now.getUTCMilliseconds()</li>
-                <li>number形式的时间戳：now.getTime()</li>
-            </ul>
-        <li id="h4">
-            <ul type='square'>
-                <li>json序列化</li>
-                    <pre>
-                        var wowo = {
-                            name:'wowo',
-                            age:25
-                        }
-                        var json = JSON.stringify(wowo)
-                        console.log(json)
-                        // {"name":"wowo","age":25}
-                    </pre>
-                <li>json反序列化</li>
-                    <pre>
-                        var wowo = '{"name":"wowo", \
-                                    "age":25}'
-                        var json = JSON.parse(wowo)
-                        console.log(json)
-                        // Object {name: "wowo", age: 25}
-                    </pre>
-            </ul>
-        </li>
+            <div>
+                <ul type='square'>
+                    <li>定义：var now = new Date()</li>
+                    <li>年：now.getFullYear()</li>
+                    <li>月：now.getMonth()</li>
+                    <li>日：now.getDate()</li>
+                    <li>星期：now.getDay()</li>
+                    <li>时：now.getHours()</li>
+                    <li>分：now.getMinutes()</li>
+                    <li>秒：now.getSeconds()</li>
+                    <li>毫秒：now.getUTCMilliseconds()</li>
+                    <li>number形式的时间戳：now.getTime()</li>
+                </ul>
+            </div>
+        <li id="h4">JSON</li>
+            <div>
+                <ul type='square'>
+                    <li>json序列化</li>
+                        <pre>
+                            var wowo = {
+                                name:'wowo',
+                                age:25
+                            }
+                            var json = JSON.stringify(wowo)
+                            console.log(json)
+                            // {"name":"wowo","age":25}
+                        </pre>
+                    <li>json反序列化</li>
+                        <pre>
+                            var wowo = '{"name":"wowo", \
+                                        "age":25}'
+                            var json = JSON.parse(wowo)
+                            console.log(json)
+                            // Object {name: "wowo", age: 25}
+                        </pre>
+                </ul>
+            </div>
         <li id='h4'>条件判断</li>
             <div>
                 <pre>
@@ -126,7 +129,7 @@
                     }
                 </pre>
             </div>
-        <li id='h4'>循环</li>
+        <li id="h4">循环</li>
             <div>
                 <ul type='square'>
                     <li>for循环</li>
@@ -224,7 +227,7 @@
             </div>
         <li id='h4'>高阶函数</li>
             <div>
-                <ul tupe='square'>
+                <ul type='square'>
                     <li>map函数：把一个function作用到Array的每一个元素上</li>
                         <pre>
                             var arr = [1,2,3,4];
@@ -426,115 +429,197 @@
                         </ol>
                 </ul>
             </div>
-        <li id="h4">操作DOM</li>
+        <li id="h4">DOM方法</li>
             <div>
                 <ul type='square'>
+                    <li>获取DOM</li>
+                        <ol type="A">
+                            <li>document.getElementById(selector);选取所有包含该Id选择器的标签</li>
+                            <li>document.getElementsByClassName(selector);选取所有包含该Class选择器的标签</li>
+                            <li>document.getElementsByTagName(tag_name);选取所有包含该标签名的标签</li>
+                            <li>document.getAttribute();返回指定标签的属性值</li>
+                        </ol>
                     <li>更新DOM</li>
                         <ol type="A">
-                            <li>node.innerHTML;更新整个标签</li>
-                            <li>node.innerText;更新文本内容</li>
+                            <li>document.setAttribute();把指定属性设置或修改为指定的值</li>
+                            <li>document.replaceChild();替换子节点</li>
                         </ol>
-                    <li>创建DOM</ul>>
-                        <ol>
-                            <li>var create_node = document.createElement('p');创建一个标签</li>
-                            <li>create_node.id = 'zz';为标签添加id选择器</li>
-                            <li>create_node.innerText = 'text';为标签添加文本内容</li>
+                    <li>创建DOM</li>
+                        <ol type="A">
+                            <li>document.createElement();创建元素节点</li>
+                            <li>document.createAttribute();创建属性节点</li>
+                            <li>document.createTextNode();创建文本节点</li>
+                            <li>document.appendChild();把新的节点添加到指定节点</li>
                         </ol>
-                    
                     <li>插入DOM</li>
                         <ol type="A">
-                            <li>parent_node.appendChild(create_node);把一个子节点添加到父节点的最后一个子节点</li>
                             <li>parent_node.insertBefore(create_node,reference_node);把子节点插入到指定位置</li>
                         </ol>
                     <li>删除DOM</li>
-                    <ol type="A">
-                        <li>parent_node.removeChild(child_node);调用父元素的removeChild()即可删除子元素</li>
-                    </ol>
+                        <ol type="A">
+                            <li>parent_node.removeChild(child_node);调用父元素的removeChild()即可删除子元素</li>
+                        </ol>
                 </ul>
+           </div>
+        <li id="h4">dom属性</li>
+           <div>
+               <ul>
+                    <li>node.innerHTML;更新整个标签</li>
+                    <li>node.innerText;更新文本内容</li>
+                    <li>node.nodeName;规定节点名称</li>
+                        <ol type="A">
+                            <li>元素节点的 nodeName 与标签名相同</li>
+                            <li>属性节点的 nodeName 与属性名相同</li>
+                            <li>文本节点的 nodeName 始终是 #text</li>
+                            <li>文档节点的 nodeName 始终是 #document</li>
+                        </ol>
+                    <li>node.nodeValue;规定节点值</li>
+                        <ol type="A">
+                            <li>元素节点的 nodeValue 是 undefined 或 null</li>
+                            <li>文本节点的 nodeValue 是文本本身</li>
+                            <li>属性节点的 nodeValue 是属性值</li>
+                        </ol>
+                    <li>node.nodeType;返回节点的类型</li>
+                        <ol type="A">
+                            <li>元素：1</li>
+                            <li>属性：2</li>
+                            <li>文本：3</li>
+                            <li>注释：8</li>
+                            <li>文档：9</li>
+                        </ol>
+               </ul>
            </div>
         <li id="h4">绑定事件</li>
            <div>
                <ul type='square'>
                    <li>node.onlick=function;鼠标点击时触发事件</li>
                    <li>node.onload=function;html加载完成时触发事件</li>
-                   <li>node.addEventListener('click',function);监听事件，可以添加多个事件</li>
+                   <li>node.addEventListener('event',function);监听事件，可以添加多个事件</li>
                </ul>
            </div>
         <li id="h4">jQuery</li>
            <div>
                <ul type='square'>
-                   <li>层级选择器</li>
-                        <ol type="A">
-                            <li>$('ancestor descendant')适用于祖先元素和子孙元素之间</li>
-                            <li>$('parent>child');适用于父元素和子元素之间</li>
-                        </ol>
-                    <li>过滤器</li>
-                        <ol type="A">
-                            <li>$('group_node:first-child');获取第一个标签</li>
-                            <li>$('group_node:last-child');获取最后一个标签</li>
-                            <li>$('group_node:child(n)');获取第n个标签，n从1开始</li>
-                            <li>$('group_node:child(even)');获取序号为偶数的标签</li>
-                            <li>$('group_node:child(odd)');获取序号为奇数的标签</li>
-                        </ol>
-                    <li>查找</li>
-                        <ol type="A">
-                            <li>parent_node.find(#vv);查找父元素下的id='vv'的标签</li>
-                            <li>parent_node.find(.zz);查找父元素下的class='zz'的标签</li>
-                            <li>parent_node.find([name=rr]);查找父元素下的name='rr'的标签</li>
-                            <li>node.parent();查找父标签</li>
-                            <li>node.prev();查找同一层级的上一个标签</li>
-                            <li>node.next();查找同一层级的下一个标签/li>
-                        </ol>
-                    <li>过滤</li>
-                        <ol type="A">
-                            <li>group_node.filter('#ff');过滤掉id='ff'的标签</li>
-                            <li>group_node.map();将所有标签转化为其他对象</li>
-                            <li>group_node.first();获取第一个标签</li>
-                            <li>group_node.last();获取最后一个标签</li>
-                            <li>group_node.slice(x,y);获取x到y的之间的标签(同数组方法)</li>
-                        </ol>
-                    <li>隐藏/显示</li>
-                        <ol type="A">
-                            <li>$(selector).hide()隐藏标签(不会改变DOM树的结构)</li>
-                            <li>$(selector).show()显示标签</li>
-                            <li>$(selector).toggle();即可显示又可隐藏</li>
-                        </ol>
-                    <li>淡入淡出</li>
-                        <ol type="A">
-                            <li>$(selector).fadeIn(speed,function);淡入已隐藏的元素</li>
-                            <li>$(selector).fadeOut(speed,function);淡出可见的元素</li>
-                            <li>$(selector).fadeToggle(speed,function);既可淡出又可淡入</li>
-                            <li>$(selector).fadeTo(speed,function);允许渐变为给定的不透明度</li>
-                        </ol>
-                    <li>滑动</li>
-                        <ol type="A">
-                            <li>$(selector).slideDown(speed,function);滑出已隐藏的元素</li>
-                            <li>$(selector).slideUp(speed,function);滑入可见的元素</li>
-                            <li>$(selector).slideToggle(speed,function);既可滑出又可滑入</li>
-                        </ol>
+                   <li>选择器</li>
+                        <ul type='square'>
+                            <li>元素选择器</li>
+                                <ol type="A">
+                                    <li>$('tagname');选取所有包含该标签名的标签</li>
+                                    <li>$('selector');选取所有包含该选择器的标签</li>
+                                    <li>$('tagname selector');选取所有包含该标签名且包含该选择器的标签</li>
+                                </ol>
+                            <li>属性选择器</li>
+                                <ol type="A">
+                                    <li>$('[element_name]');选取所有包含该属性名的标签</li>
+                                </ol>
+                        </ul> 
+                    <li>遍历</li>
+                        <ul type='square'>
+                            <li>祖先</li>
+                                <ol type="A">
+                                    <li>$(selector).parent();返回被选元素的直接父元素</li>
+                                    <li>$(selector).parents();返回被选元素的所有祖先元素</li>
+                                    <li>$(selector).parentsUntil($(selector));返回介于两个元素之间的所有祖先元素</li>
+                                </ol>
+                            <li>后代</li>
+                                <ol type="A">
+                                    <li>$(selector).children();返回被选元素的所有直接子元素</li>
+                                    <li>$(selector).find('*');返回被选元素的所有后代元素</li>
+                                </ol>
+                            <li>同胞</li>
+                                <ol type="A">
+                                    <li>$(selector).siblings();返回被选元素的所有同胞元素</li>
+                                    <li>$(selector).next();返回被选元素的下一个同胞元素</li>
+                                    <li>$(selector).nextAll();返回被选元素的所有跟随同胞元素</li>
+                                    <li>$(selector).nextUntil($(selector));返回介于两个元素之间的所有跟随同胞元素</li>
+                                </ol>
+                            <li>过滤</li>
+                                <ol type="A">
+                                    <li>$(selector).first();返回被选元素的首个元素</li>
+                                    <li>$(selector).last();返回被选元素的首个元素</li>
+                                    <li>$(selector).eq(index);返回被选元素中指定索引的元素</li>
+                                    <li>$(selector).filter($(selector));返回被选元素中指定筛选条件的元素</li>
+                                    <li>$(selector).not($(selector));与filter()相反</li>
+                                </ol>
+                        </ul>       
+                    <li>效果</li>
+                        <ul type="square">
+                            <li>隐藏/显示</li>
+                                <ol type="A">
+                                    <li>$(selector).hide()隐藏标签(不会改变DOM树的结构)</li>
+                                    <li>$(selector).show()显示标签</li>
+                                    <li>$(selector).toggle();即可显示又可隐藏</li>
+                                </ol>
+                            <li>淡入淡出</li>
+                                <ol type="A">
+                                    <li>$(selector).fadeIn(speed,function);淡入已隐藏的元素</li>
+                                    <li>$(selector).fadeOut(speed,function);淡出可见的元素</li>
+                                    <li>$(selector).fadeToggle(speed,function);既可淡出又可淡入</li>
+                                    <li>$(selector).fadeTo(speed,function);允许渐变为给定的不透明度</li>
+                                </ol>
+                            <li>滑动</li>
+                                <ol type="A">
+                                    <li>$(selector).slideDown(speed,function);滑出已隐藏的元素</li>
+                                    <li>$(selector).slideUp(speed,function);滑入可见的元素</li>
+                                    <li>$(selector).slideToggle(speed,function);既可滑出又可滑入</li>
+                                </ol>
+                            <li>动画</li>
+                                <ol type="A">
+                                    <li>${selector}.animate({css},speed,function);添加css样式的动画效果</li>
+                                </ol>
+                            <li>停止滑动和动画</li>
+                                <ol type="A">
+                                    <li>${selector}.stop(stopAll,goToEnd);停止正在运行中的滑动和动画</li>
+                                    <li>可选的 stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行。</li>
+                                    <li>可选的 goToEnd 参数规定是否立即完成当前动画。默认是 false。</li>
+                                </ol>
+                        </ul>
                     <li>操作DOM</li>
-                        <ol type='A'>
-                            <li>node.text();不传表示获取标签文本，传入表示修改文本</li>
-                            <li>node.html();不传表示获取元素HTML，传入表示修改HTML</li>
-                            <li>node.css(name,value);只传name表示获取css属性，既传name又传value表示设置css样式</li>
-                            <li>node.hasClass('xx')判断标签的class属性是否包含'xx'</li>
-                            <li>node.addClass('xx')为标签添加class='xx'这个属性</li>
-                            <li>node.removeClass('xx')删除标签中class='xx'这个属性</li>
-                            <li>$(window).width();浏览器可视窗口宽度</li>
-                            <li>$(window).height();浏览器可视窗口高度</li>
-                            <li>$(document).width();HTML文档宽度</li>
-                            <li>$(document).height();HTML文档高度</li>
-                            <li>$(node).width();不传表示获取标签宽度，传入表示设置标签宽度</li>
-                            <li>$(node).height();不传表示获取标签高度，传入表示设置标签高度</li>
-                            <li>$(node).attr('name','value');只传name表示获取name属性的value；既传name又传value表示设置name='value'的属性</li>
-                            <li>$(node).removeattr('name');删除name属性</li>
-                            <li>node.append('html');在子标签之后添加一个新标签</li>
-                            <li>node.prepend('html');在子标签之前添加一个新标签</li>
-                            <li>node.after('html');在兄弟标签之后添加一个新标签</li>
-                            <li>node.before('html');在兄弟标签之前添加一个新标签</li>
-                            <li>node.remove();删除标签</li>
-                        </ol>
+                        <ul type='square'>
+                            <li>获取和设置</li>
+                                <ol type='A'>
+                                    <li>${selector}.text();设置或返回所选元素的文本内容</li>
+                                    <li>${selector}.html();设置或返回所选元素的内容(包括HTML标记)</li>
+                                    <li>${selector}.val();设置或返回表单字段的值</li>
+                                    <li>${selector}.attr();设置或返回属性值</li>
+                                </ol>
+                            <li>添加</li>
+                                <ol type='A'>
+                                    <li>${selector}.append();在被选元素的结尾插入内容</li>
+                                    <li>${selector}.prepend();在被选元素的开头插入内容</li>
+                                    <li>${selector}.after();在被选元素之后插入内容</li>
+                                    <li>${selector}.before();在被选元素之前插入内容</li>
+                                </ol>
+                            <li>删除</li>
+                                <ol type='A'>
+                                    <li>$(selector).remove();删除被选元素及其子元素</li>
+                                    <li>$(selector).empty();删除被选元素的子元素</li>
+                                </ol>
+                            <li>CSS类</li>
+                                <ol type='A'>
+                                    <li>$(selector).addClass('class_name');向被选元素添加一个或多个类</li>
+                                    <li>$(selector).hasClass('class_name')判断标签是否包含class属性</li>
+                                    <li>$(selector).removeClass('class_name');向被选元素删除一个或多个类</li>
+                                    <li>$(selector).toggleClass('class_name');向被选元素添加或删除一个或多个类</li>
+                                    <li>$(selector).css({'key':'value'});设置或返回所选元素的css单一或多个样式</li>
+                                </ol>
+                            <li>尺寸</li>
+                                <ol type='A'>
+                                    <li>$(selector).width();设置或返回元素的宽度(不包括内边距、外边距、边框)</li>
+                                    <li>$(selector).height();设置或返回元素的高度(不包括内边距、外边距、边框)</li>
+                                    <li>$(selector).innerWidth();返回元素的高度(包括内边距)</li>
+                                    <li>$(selector).innerHeight();返回元素的高度(包括内边距)</li>
+                                    <li>$(selector).outerWidth();返回元素的高度(包括内边距和边框)</li>
+                                    <li>$(selector).outerHeight();返回元素的高度(包括内边距和边框)</li>
+                                    <li>$(selector).outerWidth(true);返回元素的高度(包括内边距、外边距、边框)</li>
+                                    <li>$(selector).outerHeight(true);返回元素的高度(包括内边距、外边距、边框)</li>
+                                    <li>$(document).width();返回html文档的宽度</li>
+                                    <li>$(document).height();返回html文档的高度</li>
+                                    <li>$(window).width();返回浏览器窗口的宽度</li>
+                                    <li>$(window).height();返回浏览器窗口的高度</li>
+                                </ol>
                     <li>鼠标事件</li>
+                    <li>$(document).ready(function);将函数绑定到文档的就绪事件(当文档完成加载)</li>
                         <ol type="A">
                             <li>node.click(function);鼠标单击时触发事件</li>
                             <li>node.dblclick(function);鼠标双击时触发事件</li>
@@ -566,6 +651,7 @@
                         </ol>
                 </ul>
            </div>
+        <li id="h4">Ajax</li>
     </ol>
 </body>
 </html>

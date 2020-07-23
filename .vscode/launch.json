@@ -10,7 +10,9 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
-            "file": "${workspaceFolder}/homework/slider.html"
+            // "file": "${workspaceFolder}/homework/slider.html"
+            "file": "${workspaceFolder}/index.html"
+
         }   
     ]
 }
