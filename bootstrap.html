@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>bootstrap</title>
+    <style>
+        h1{font: bolder italic 40px '微软雅黑';}
+        li{width: 1000px;
+            height: 40px;
+            font: bolder italic 20px '微软雅黑';}
+        div{width: 600px;
+        color: slateblue;}
+        caption,td,th{font: bolder italic 17px '微软雅黑';}
+        #h4{font: bolder italic 20px '微软雅黑';}
+
+    </style>
+</head>
+<body>
+	<h1>bootstrap框架</h1>
+	<ol type="A">
+		<li id="h4">布局</li>
+			<ol type="1">
+				<li id="h4">container容器</li>
+					<ul type="square">
+						<li>.container:响应式容器</li>
+						<li>.container-fluid:充满浏览器</li>
+					</ul>
+				<li id="h4">栅格系统</li>
+					<ul type="square">
+						<li>.col-*:超小屏幕(<576px)</li>
+						<li>.col-sm-*:小屏幕(>=576px)</li>
+						<li>.col-md-*:中等屏幕(>=768px)</li>
+						<li>.col-lg-*:大屏幕(>=992px)</li>
+						<li>.col-xl-*:超大屏幕(>=1200px)</li>
+						<li>.offset-*:列偏移</li>
+						<li>.order-*:重排序</li>
+						<li>.no-gutters:间隙清除</li>
+						<li>.align-items-start:垂直居上</li>
+						<li>.align-items-center:垂直居中</li>
+						<li>.align-items-end:垂直居下</li>
+						<li>.justify-content-start:水平居左</li>
+						<li>.justify-content-center:水平居中</li>
+						<li>.justify-content-end:水平居右</li>
+						<li>.justify-content-around:水平平分</li>
+						<li>.justify-content-between:水平两端对齐</li>
+					</ul>
+			</ol>
+		
+		<li id="h4">内容</li>
+			<ol type="1">
+				<li id="h4">排版</li>
+					<ul type="square">
+						<li>display-*:显示标题</li>
+						<li>.lead:定义中心段落</li>
+						<li>.mark:高亮文本</li>
+						<li>.small:小号字体</li>
+						<li>.blockquote:来源引用</li>
+						<li>列表</li>
+							<ol type="1">
+								<li>.list-unstyled:列表初始化</li>
+								<li>.list-inline/list-inline-item:内联列表</li>
+							</ol>
+					</ul>
+				<li id="h4">图片</li>
+					<ul type="square">
+						<li>.img-fluid:图片充满</li>
+						<li>.img-thumbnail:带圆角的外框缩略图</li>						
+					</ul>
+				<li id="h4">表格</li>
+					<ul type="square">
+						<li>.table:定义表格</li>
+						<li>.table-bordered:表格边框</li>
+						<li>.table-borderless:表格无边框</li>
+						<li>..table-sm:紧缩表格</li>
+						<li>.table-striped:条纹状表格</li>
+						<li>.table-danger:表格填充色</li>
+						<li>.thead-dark:表头填充色</li>
+						<li>.table-hover:鼠标悬停高亮</li>
+						<li>.table-responsive:响应式表格</li>
+					</ul>
+			</ol>
+		<li id="h4">公共样式</li>
+			<ol type="1">
+				<li id="h4">边框</li>
+					<ul type="square">
+						<li>.border:定义边框</li>
+						<li>.border-top:上边框</li>
+						<li>.border-right:右边框</li>
+						<li>.border-bottom下边框</li>
+						<li>.border-left:左边框</li>
+						<li>.border-warning:边框颜色</li>
+						<li>.rounded:定义圆角边框</li>
+						<li>.rounded-top:圆角上边框</li>
+						<li>.rounded-right:圆角右边框</li>
+						<li>.rounded-buttom:圆角下边框</li>
+						<li>.rounded-left:圆角左边框</li>
+					</ul>
+				<li id="h4">浮动属性|清除浮动</li>
+					<ul type="square">
+						<li>.float-left:左浮动</li>
+						<li>.float-right:右浮动</li>
+						<li>.clearfix:清除浮动</li>
+					</ul>
+				<li id="h4">颜色</li>
+					<ul type="square">
+						<li>.text-warning:文字颜色</li>
+						<li>.bg-warning:背景颜色</li>
+					</ul>
+				<li id="h4">display显示属性</li>
+					<ul type="square">
+						<li>.d-block:块属性</li>
+						<li>.d-inline:内联属性</li>
+						<li>.d-inline-block:内联块属性</li>
+						<li>.d-none:隐藏元素(不占位置)</li>
+					</ul>
+				<li id="h4">文本对齐</li>
+					<ul type="square">
+						<li>.text-left:左对齐</li>
+						<li>.text-center:文本居中</li>
+						<li>.text-right:右对齐</li>
+						<li>.text-justify:两端对齐</li>
+						<li>.text-truncate:防溢出</li>
+						<li>.text-nowrap:防换行</li>
+						<li>.text-lowercase:文本小写</li>
+						<li>.text-uppercase:文本大写</li>
+						<li>.text-capitalize:首字母大写</li>
+						<li>.text-monospace:等宽字体</li>
+					</ul>
+				<li id="h4">垂直对齐</li>
+					<ul type="square">
+						<li>.align-top:垂直上对齐</li>
+						<li>.align-middle:垂直居中</li>
+						<li>.align-bottom:垂直下对齐</li>
+					</ul>
+				<li id="h4">规格和尺寸</li>
+					<ul type="square">
+						<li>.w-25:width=25%</li>
+						<li>.w-50:width=50%</li>
+						<li>.w-75:width=75%</li>
+						<li>.w-100:width=100%</li>
+						<li>.h-25:height=25%</li>
+						<li>.h-50:height=50%</li>
+						<li>.h-75:height=75%</li>
+						<li>.h-100:height=100%</li>
+						<li>.mw-100:max-width: 100%</li>
+						<li>.mh-100:max-height: 100%</li>
+					</ul>
+				<li id="h4">间隔</li>
+					<ul type="square">
+						<li>.m-*:margin</li>
+						<li>.mt-*:margin-top</li>
+						<li>.mr-*:margin-right</li>
+						<li>.mb-*:margin-bottom</li>
+						<li>.ml-*:margin-left</li>
+						<li>.p-*:padding</li>
+						<li>.pt-*:padding-top</li>
+						<li>.pr-*:padding-right</li>
+						<li>.pb-*:padding-bottom</li>
+						<li>.pl-*:padding-left</li>
+					</ul>
+				<li id="h4">阴影</li>
+					<ul type="square">
+						<li>.shadow:定义阴影</li>
+						<li>.shadow-none:删除阴影</li>
+					</ul>
+				<li id="h4">定位</li>
+					<ul type="square">
+						<li>.position-static:静态定位</li>
+						<li>.position-relative:相对定位</li>
+						<li>.position-absolute:绝对定位</li>
+						<li>.position-fixed:固定定位</li>
+						<li>.position-sticky:粘性定位</li>
+						<li>.fixed-top:固定在顶部</li>
+						<li>.fixed-bottom:固定在底部</li>
+					</ul>
+				<li id="h4">隐藏</li>
+					<ul type="square">
+						<li>.invisible:隐藏元素(占位置)</li>
+						<li>.d-none:隐藏元素(不占位置)</li>
+					</ul>
+				<li id="h4">关闭图标</li>
+				<li id="h4">嵌入</li>
+				<li id="h4">图像替换</li>
+				<li id="h4">读屏器</li>
+				<li id="h4">flex弹性布局</li>
+			</ol>
+		<li id="h4">组件</li>
+			<ol type="1">
+				<li id="h4">警告提示框</li>
+					<ul type="square">
+						<li>.alert:定义警告框</li>
+						<li>.alert-dark:警告框颜色</li>
+						<li>.close:定义警告框关闭按钮</li>
+						<li>data-dismiss="alert":给警告框关闭按钮添加关闭效果</li>
+					</ul>
+				<li id="h4">徽章</li>
+					<ul type="square">
+						<li>.badge:定义徽章</li>
+						<li>.badge-pill:定义胶囊式徽章</li>
+						<li>.badge-warning:徽章颜色</li>
+					</ul>
+				<li id="h4">面包屑导航</li>
+					<ul type="square">
+						<li>.breadcrumb:定义面包屑</li>
+						<li>.breadcrumb-item:定义面包屑选项</li>
+					</ul>
+				<li id="h4">按钮</li>
+					<ul type="square">
+						<li>.btn:定义按钮</li>
+						<li>.btn-dark:按钮颜色</li>
+						<li>.btn-outline-primary:轮廓按钮</li>
+						<li>.btn-lg:大按钮</li>
+						<li>.btn-sm:小按钮</li>
+						<li>.btn-block:块级按钮</li>
+						<li>.active:添加活跃状态</li>
+						<li>.disabled:添加禁用效果</li>
+						<li>.data-toggle="button" aria-pressed="false":添加切换效果</li>
+					</ul>
+				<li id="h4">按钮组</li>
+					<ul type="square">
+						<li>.btn-group:定义按钮组</li>
+						<li>.btn-toolbar:定义按钮工具栏</li>
+					</ul>
+				<li id="h4">下拉菜单</li>
+					<ul type="square">
+						<li>.dropdown:定义下拉按钮</li>
+						<li>.dropdown-toggle:定义下拉按钮开关</li>
+						<li>.dropdown-toggle-split:分组下拉按钮和开关</li>
+						<li>.dropup:下拉按钮开关向上</li>
+						<li>.dropright:下拉按钮开关向右</li>
+						<li>.dropleft:下拉按钮开关向左</li>
+						<li>data-toggle="dropdown":js给开关添加下拉效果</li>
+						<li>.dropdown-menu:定义下拉菜单</li>
+						<li>.dropdown-menu-right:下拉菜单右对齐</li>
+						<li>.dropdown-menu-left:下拉菜单左对齐</li>
+						<li>.dropdown-item:定义下拉菜单内容</li>
+					</ul>
+				
+				<li id="h4">输入框|输入框群组</li>
+					<ul type="square">
+						<li>.input-group:定义输入组</li>
+						<li>.input-group-prepend:定义添加项</li>
+						<li>.input-group-text:定义添加内容</li>
+						<li>.custom-select:定义输入框选择列表</li>
+					</ul>
+				<li id="h4">
+					<ul type="square">
+						<li>.jumbotron:定义巨幕</li>
+					</ul>
+				</li>
+				<li id="h4">表单</li>
+					<ul type="square">
+						<li>.form:定义表单行</li>
+						<li>.form-inline:定义内联表单</li>
+						<li>.form-group:定义表单输入项</li>
+						<li>.form-control:定义一般输入框/定义多选框</li>
+						<li>.form-control-sm:小框</li>
+						<li>.form-control-lg:大框</li>
+						<li>.form-control-plaintext:只读纯文本</li>
+						<li>.form-control-range:水平范围输入</li>
+						<li>.form-check-inline:定义表单内联选择项</li>
+						<li>.form-check:定义表单选择项</li>
+						<li>.form-check-input:定义表单选择项中的选择框</li>
+						<li>.form-check-label:定义表单选择项中的文本</li>
+						<li>.form-control-file:定义文件上传框</li>
+						<li>novalidate:关闭表单的浏览器验证</li>
+						<li>.needs-validation:自定义表单验证</li>
+						<li>required:自定义验证目标/浏览器验证目标</li>
+						<li>.valid-feedback:定义有效验证文字式反馈信息</li>
+						<li>.valid-tooltip:定义有效验证按钮式反馈信息</li>
+						<li>.invalid-feedback:定义无效验证文字式反馈信息</li>
+						<li>invalid-tooltip:定义无效验证按钮式反馈信息</li>
+						<li>给submit按钮添加监听，动态添加was-validated:表示已经验证，则会提示反馈信息</li>
+							<pre>
+								<script>
+								// Example starter JavaScript for disabling form submissions if there are invalid fields
+								(function() {
+								  'use strict';
+								  window.addEventListener('load', function() {
+								    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+								    var forms = document.getElementsByClassName('needs-validation');
+								    // Loop over them and prevent submission
+								    var validation = Array.prototype.filter.call(forms, function(form) {
+								      form.addEventListener('submit', function(event) {
+								        if (form.checkValidity() === false) {
+								          event.preventDefault();
+								          event.stopPropagation();
+								        }
+								        form.classList.add('was-validated');
+								      }, false);
+								    });
+								  }, false);
+								})();
+								</script>
+							</pre>
+						<li>.is-valid:不经验证的提示有效反馈</li>
+						<li>.is-invalid:不经验证的提示无效反馈</li>
+					</ul>
+				<li id="h4">轮播效果</li>
+					<ul type="square">
+						<li>.carousel:定义轮播图</li>
+						<li>.slide:添加滑动效果</li>
+						<li>data-ride="carousel":添加图片加载方式</li>
+						<li>.carousel-inner:定义轮播区域</li>
+						<li>.carousel-item:定义轮播目标</li>
+						<li>.active:显示状态(控制器/指示器)</li>
+						<li>.carousel-control-prev:定义控制开关(上一张)</li>
+						<li>data-target="#selector":添加数据目标(控制器/指示器)</li>
+						<li>data-slide="prev":添加数据滑动方向(上一张)</li>
+						<li>.carousel-control-prev-icon:定义控制开关icon(向左)</li>
+						<li>.carousel-control-next:定义控制开关(下一张)</li>
+						<li>data-slide="next":添加数据滑动方向(下一张)</li>	
+						<li>.carousel-control-next-icon:定义控制开关(向右)</li>
+						<li>.carousel-indicators:定义轮播指示器</li>
+						<li>data-slide-to="num":添加数据滑动顺序</li>
+						<li>.carousel-caption:添加字幕</li>
+						<li>.carousel-fade:添加淡入淡出的效果</li>
+						<li>data-interval="num":控制轮播间隔时间</li>
+						<li>示例：</li>
+							<div class="container">
+								<div class="row">
+									<div class="col-8 ">
+										<div id="x" class="carousel slide carousel-fade" data-ride="carousel">
+											<ol class="carousel-indicators">
+											    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+											    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+											    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+											  </ol>
+											<div class="carousel-inner">
+												<div class="carousel-item active" data-interval="3">
+													<img src="./img/md.jpg" class="d-block w-100">
+													<div class="carousel-caption ">
+														<h1>这是一只狗</h1>
+														<p>它温顺可爱，落落大方</p>
+													</div>
+												</div>
+												<div class="carousel-item" data-interval="3">
+													<img src="./img/sm.jpg" class="d-block w-100">
+													<div class="carousel-caption ">
+														<h1>这是一片桃林</h1>
+														<p>它香气扑鼻，亭亭玉立</p>
+													</div>
+												</div>
+												<div class="carousel-item" data-interval="3">
+													<img src="./img/sm2.jpg" class="d-block w-100">
+													<div class="carousel-caption">
+														<h1>这是阳光</h1>
+														<p>它光彩夺目，给人希望</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<a href="#" class="carousel-control-prev" data-slide="prev" data-target="#x">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										</a>
+										<a href="#" class="carousel-control-next" data-slide="next" data-target="#x">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+					</ul>
+				<li id="h4">列表组</li>
+					<ul type="square">
+						<li>.list-group:定义列表组</li>
+						<li>.list-group-flush:定义紧凑型列表组</li>
+						<li>.list-group-item:定义列表项</li>
+						<li>.list-group-item-action:添加列表点击效果</li>
+						<li>.list-group-item-danger:添加列表背景色</li>
+					</ul>
+				<li id="h4">媒体对象|图文混排</li>
+				<li id="h4">弹出提示框</li>
+				<li id="h4">提示冒泡</li>
+				<li id="h4">POP提示</li>
+				<li id="h4">弹出模态框</li>
+				<li id="h4">导航|滑动门</li>
+					<ul type="square">
+						<li>.nav:定义导航栏</li>
+						<li>.nav-tabs:定义标签式导航栏</li>
+						<li>.nav-pills:定义药丸式导航栏</li>
+						<li>.nav-item:定义导航项</li>
+						<li>.nav-fill:导航项两端对齐，不等宽</li>
+						<li>.nav-justified:导航项两端对齐，等宽</li>
+						<li>.flex-column:导航项垂直显示</li>
+						<li>.nav-link:定义导航内容</li>
+					</ul>
+				<li id="h4">导航条</li>
+				<li id="h4">卡片</li>
+					<ul type="square">
+						<li>.card-group:卡组</li>
+						<li>.card-deck:卡片组</li>
+						<li>.card:定义卡片</li>
+						<li>.card-header:定义卡片页眉</li>
+						<li>.card-body:定义卡片身体</li>
+						<li>.card-title:卡片标题</li>
+						<li>.card-subtitle:卡片副标题</li>
+						<li>.card-link:卡片链接</li>
+						<li>.card-text:卡片文本</li>
+						<li>.card-img-top:卡片图片上对齐</li>
+						<li>.card-footer:定义卡片页脚</li>
+					</ul>
+				<li id="h4">折叠面板</li>
+					<ul type="square">
+						<li>.collapse:定义折叠内容</li>
+						<li>data-toggle="collapse":定义折叠开关</li>
+						<li>data-target="#collapseOne":定义折叠目标</li>
+						<li>.accordion:定义手风琴(需要data-parent="#accordionExample"搭配使用)</li>
+					</ul>
+				<li id="h4">进度条</li>
+				<li id="h4">滚动监听</li>
+				<li id="h4">旋转特性</li>
+			</ol>
+	</ol>
+	
+	
+	
+	
+	
+	
+	<script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/popper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

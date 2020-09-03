@@ -652,6 +652,35 @@
                 </ul>
            </div>
         <li id="h4">Ajax</li>
+        <li id="h4">倒计时</li>
+            <div>
+                <pre>
+                    function startfunc(){
+                        timer=setInterval(function(){
+                            //now
+                            var now= new Date()
+                            now_x=Date.parse(now)
+                            //end_time
+                            var activity= new Date(2020,07,16,15,54,00)
+                            activity_x=Date.parse(activity)
+                            //end_time-now
+                            var valid_time=activity_x-now_x
+                            //day
+                            var d=parseInt((((valid_time/1000)/60)/60)/24)
+                            id_element('d').innerHTML=d
+                            //hour
+                            var h=parseInt((((valid_time/1000)/60)/60)-d*24)
+                            id_element('h').innerHTML=h
+                            //minute
+                            var m=parseInt(((valid_time/1000)/60)-(d*24)*60-h*60)
+                            id_element('m').innerHTML=m
+                            //second
+                            var s=parseInt((valid_time/1000)-(d*24)*60*60-h*60*60-m*60)
+                            id_element('s').innerHTML=s
+                        },true)
+                    };
+                </pre>
+            </div>
     </ol>
 </body>
 </html>
