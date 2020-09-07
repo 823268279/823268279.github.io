@@ -191,20 +191,43 @@
 				<li id="h4">警告提示框</li>
 					<ul type="square">
 						<li>.alert:定义警告框</li>
+						<li>.alert-dismissible:定义可关闭的警告框</li>
 						<li>.alert-dark:警告框颜色</li>
 						<li>.close:定义警告框关闭按钮</li>
 						<li>data-dismiss="alert":给警告框关闭按钮添加关闭效果</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="alert alert-info alert-dismissible fade show">
+									<p>警告框</p>
+									<button type="button" class="close" data-dismiss="alert">
+										<span >&times;</span>
+									</button>
+								</div>
+							</div>
 					</ul>
 				<li id="h4">徽章</li>
 					<ul type="square">
 						<li>.badge:定义徽章</li>
 						<li>.badge-pill:定义胶囊式徽章</li>
 						<li>.badge-warning:徽章颜色</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="badge badge-info">徽章</div>
+								<div class="badge badge-pill badge-success">胶囊式徽章</div>
+							</div>
 					</ul>
 				<li id="h4">面包屑导航</li>
 					<ul type="square">
 						<li>.breadcrumb:定义面包屑</li>
 						<li>.breadcrumb-item:定义面包屑选项</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="breadcrumb">
+									<a href="#" class="breadcrumb-item">ss</a>
+									<a href="#" class="breadcrumb-item">ss</a>
+									<a href="#" class="breadcrumb-item">ss</a>
+								</div>
+							</div>
 					</ul>
 				<li id="h4">按钮</li>
 					<ul type="square">
@@ -214,42 +237,90 @@
 						<li>.btn-lg:大按钮</li>
 						<li>.btn-sm:小按钮</li>
 						<li>.btn-block:块级按钮</li>
-						<li>.active:添加活跃状态</li>
-						<li>.disabled:添加禁用效果</li>
-						<li>.data-toggle="button" aria-pressed="false":添加切换效果</li>
 					</ul>
 				<li id="h4">按钮组</li>
 					<ul type="square">
 						<li>.btn-group:定义按钮组</li>
 						<li>.btn-toolbar:定义按钮工具栏</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="btn-toolbar">
+									<div class="btn-group mr-3">
+										<button type="button" class="btn btn-outline-info">轮廓按钮</button>
+										<button type="button" class="btn btn-outline-primary">轮廓按钮</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-danger">小按钮</button>
+										<button type="button" class="btn btn-sm btn-dark">小按钮</button>
+										<button type="button" class="btn btn-lg btn-warning">大按钮</button>
+									</div>
+								</div>
+							</div>
 					</ul>
 				<li id="h4">下拉菜单</li>
 					<ul type="square">
-						<li>.dropdown:定义下拉按钮</li>
-						<li>.dropdown-toggle:定义下拉按钮开关</li>
-						<li>.dropdown-toggle-split:分组下拉按钮和开关</li>
+						<li>.dropdown:定义下拉按钮向下</li>
 						<li>.dropup:下拉按钮开关向上</li>
 						<li>.dropright:下拉按钮开关向右</li>
 						<li>.dropleft:下拉按钮开关向左</li>
-						<li>data-toggle="dropdown":js给开关添加下拉效果</li>
+						<li>.dropdown-toggle:定义下拉按钮开关</li>
+						<li>.dropdown-toggle-split:分组下拉按钮和开关</li>
+						<li>data-toggle="dropdown":添加下拉效果</li>
 						<li>.dropdown-menu:定义下拉菜单</li>
 						<li>.dropdown-menu-right:下拉菜单右对齐</li>
 						<li>.dropdown-menu-left:下拉菜单左对齐</li>
 						<li>.dropdown-item:定义下拉菜单内容</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="dropdown">
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary">下拉菜单</button>
+										<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										  <span class="sr-only">Toggle Dropdown</span>
+										</button>
+										<div class="dropdown-menu dropdown-menu-right">
+											<a href="#" class="dropdown-item">One</a>
+											<a href="#" class="dropdown-item">Two</a>
+											<a href="#" class="dropdown-item">Three</a>
+										</div>
+									</div>
+								</div>
+							</div>
 					</ul>
-				
 				<li id="h4">输入框|输入框群组</li>
 					<ul type="square">
 						<li>.input-group:定义输入组</li>
 						<li>.input-group-prepend:定义添加项</li>
 						<li>.input-group-text:定义添加内容</li>
 						<li>.custom-select:定义输入框选择列表</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="col-4">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<label class="input-group-text">@</label>
+										</div>
+										<select class="custom-select">
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+										</select>
+									</div>
+								</div>
+							</div>
 					</ul>
-				<li id="h4">
+				<li id="h4">巨幕	</li>
 					<ul type="square">
 						<li>.jumbotron:定义巨幕</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="jumbotron">
+									<h3>巨幕</h3>
+									<p>这是一个巨幕</p>
+								</div>
+							</div>
 					</ul>
-				</li>
+				
 				<li id="h4">表单</li>
 					<ul type="square">
 						<li>.form:定义表单行</li>
@@ -272,6 +343,8 @@
 						<li>.valid-tooltip:定义有效验证按钮式反馈信息</li>
 						<li>.invalid-feedback:定义无效验证文字式反馈信息</li>
 						<li>invalid-tooltip:定义无效验证按钮式反馈信息</li>
+						<li>.is-valid:不经验证的提示有效反馈</li>
+						<li>.is-invalid:不经验证的提示无效反馈</li>
 						<li>给submit按钮添加监听，动态添加was-validated:表示已经验证，则会提示反馈信息</li>
 							<pre>
 								<script>
@@ -295,8 +368,35 @@
 								})();
 								</script>
 							</pre>
-						<li>.is-valid:不经验证的提示有效反馈</li>
-						<li>.is-invalid:不经验证的提示无效反馈</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="col-3">
+									<form action="#" class="text-center needs-validation" novalidate>
+										<div class="form-group">
+											<input type="text" class="form-control form-control-sm" placeholder="username" required>
+												<div class="invalid-feedback">
+													please input usernamee
+												</div>
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control form-control-sm" placeholder="password" required>
+												<div class="invalid-feedback">
+													please input password
+												</div>
+										</div>
+										<div class="form-group">
+											<div class="form-check">
+												<input type="checkbox" class="form-check-input" required>
+												<label class="form-check-label">remember me</label>
+												<div class="is-valid">
+													please check
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary">login</button>
+									</form>
+								</div>
+							</div>
 					</ul>
 				<li id="h4">轮播效果</li>
 					<ul type="square">
@@ -369,12 +469,92 @@
 						<li>.list-group-item:定义列表项</li>
 						<li>.list-group-item-action:添加列表点击效果</li>
 						<li>.list-group-item-danger:添加列表背景色</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="row">
+									<div class="col-4">
+										<div class="list-group">
+											<a href="#" class="list-group-item list-group-item-action list-group-item-info active" data-toggle="list" data-target="#a">列表组</a>
+											<a href="#" class="list-group-item list-group-item-action list-group-item-danger" data-toggle="list" data-target="#b">列表组</a>
+											<a href="#" class="list-group-item list-group-item-action list-group-item-warning" data-toggle="list" data-target="#c">列表组</a>
+										</div>	
+									</div>
+									<div class="col-8">
+										<div class="tab-content">
+											<div class="tab-pane fade show active" id="a">单枪匹马你别怕</div>
+											<div class="tab-pane fade" id="b">孤身一人又何妨</div>
+											<div class="tab-pane fade" id="c">愿你余生都	有足够的勇气</div>
+										</div>
+									</div>
+								</div>
+							</div>
 					</ul>
 				<li id="h4">媒体对象|图文混排</li>
+					<ul type="square">
+						<li>.media:定义媒体对象</li>
+						<li>.media-body:定义媒体对象的内容</li>
+						<li>.align-self-start:顶部对齐</li>
+						<li>.align-self-center:中心对齐</li>
+						<li>.align-self-end:底部对齐</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="media">
+									<img src="img/html_img.png" >
+									<div class="media-body align-self-center">
+										<h3>孤独</h3>
+										<p>我站在人群中就好像是P上去的一样.</p>
+									</div>
+								</div>
+							</div>
+					</ul>
 				<li id="h4">弹出提示框</li>
 				<li id="h4">提示冒泡</li>
 				<li id="h4">POP提示</li>
-				<li id="h4">弹出模态框</li>
+				<li id="h4">模态框</li>
+					<ul type="square">
+						<li>.modal:定义模型</li>
+						<li>.modal-xl:超大模型</li>
+						<li>.modal-lg:大模型</li>
+						<li>.modal-sm:小模型</li>
+						<li>.fade:添加淡入淡出</li>
+						<li>data-backdrop="static":背景设置为静态模式(鼠标点击外部也不会关闭弹窗)</li>
+						<li>data-keyboard="false":添加按键开关(false表示不能使用ESC关闭弹窗)</li>
+						<li>.modal-dialog:定义模态框</li>
+						<li>.modal-dialog-scrollable:定义一个可滚动的模态框</li>
+						<li>.modal-dialog-centered:对话框居中</li>
+						<li>.modal-content:定义模态框内容</li>
+						<li>.modal-header:定义模态框头部</li>
+						<li>.modal-title:定义模态框标题</li>
+						<li>.modal-body:定义模态框身体</li>
+						<li>.modal-footer:定义模态框脚部</li>
+						<li>data-toggle="modal":添加启动开关</li>
+						<li>data-target="#selecto":添加启动对象</li>
+						<li>data-dismiss="modal":添加关闭开关</li>
+						<li>例：</li>
+							<div class="container">
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#xx">
+								  模态框
+								</button>
+								<div class="modal fade" id="xx" data-backdrop="static" data-keyboard="true" tabindex="-1">
+									<div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h1 class="modal-title">这是对话框</h1>
+												<button type="button" class="close" data-dismiss="modal">
+													<span>&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												你应该更有勇气一点
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</ul>
 				<li id="h4">导航|滑动门</li>
 					<ul type="square">
 						<li>.nav:定义导航栏</li>
@@ -385,12 +565,27 @@
 						<li>.nav-justified:导航项两端对齐，等宽</li>
 						<li>.flex-column:导航项垂直显示</li>
 						<li>.nav-link:定义导航内容</li>
+						<li>例：</li>
+							<ul class="nav">
+								<li class="nav-item">
+									<a href="#" class="nav-link active">Active</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">Link</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link">Link</a>
+								</li>
+								<li class="nav-item">
+									<a href="#" class="nav-link disabled">disabled</a>
+								</li>
+							</ul>
 					</ul>
 				<li id="h4">导航条</li>
 				<li id="h4">卡片</li>
 					<ul type="square">
-						<li>.card-group:卡组</li>
-						<li>.card-deck:卡片组</li>
+						<li>.card-group:卡组(卡片之间无空隙)</li>
+						<li>.card-deck:卡片组(卡片之间有空隙)</li>
 						<li>.card:定义卡片</li>
 						<li>.card-header:定义卡片页眉</li>
 						<li>.card-body:定义卡片身体</li>
@@ -400,6 +595,55 @@
 						<li>.card-text:卡片文本</li>
 						<li>.card-img-top:卡片图片上对齐</li>
 						<li>.card-footer:定义卡片页脚</li>
+						<li>例：</li>
+							<div class="container">
+								<div class="card-deck">	
+									<div class="card bg-secondary">
+										<img src="./img/2.png" >
+										<div class="card-body">
+											<h3 class="card-title">断章</h3>
+											<p class="card-text">
+												你站在桥上看风景，
+												看风景的人在楼上看你，
+												明月装饰了你的窗子，
+												你装饰了别人的梦。
+											</p>
+										</div>
+										<div class="card-footer">
+											<small>——卞之琳</small>
+										</div>
+									</div>
+									<div class="card bg-success">
+										<img src="./img/3.png" >
+										<div class="card-body bg-danger">
+											<h3 class="card-title">偶然</h3>
+											<p class="card-text">
+												我是天空里的一片云，
+												偶尔投影在你的波心，
+												你不必惊讶，
+												更无须欢喜.
+											</p>
+										</div>
+										<div class="card-footer bg-warning">
+											<small>——徐志摩</small>
+										</div>
+									</div>
+									<div class="card border border-warning">
+										<img src="./img/4.png">
+										<div class="card-body border border-primary">
+											<h3 class="card-title">错误</h3>
+											<p class="card-text text-success">
+												你的心是小小的窗扉紧掩，
+												我达达的马蹄是美丽的错误，
+												我不是归人，是个过客。
+											</p>
+										</div>
+										<div class="card-footer border border-info text-warning">
+											<small>——郑愁予</small>
+										</div>
+									</div>
+								</div>
+							</div>
 					</ul>
 				<li id="h4">折叠面板</li>
 					<ul type="square">
@@ -407,6 +651,31 @@
 						<li>data-toggle="collapse":定义折叠开关</li>
 						<li>data-target="#collapseOne":定义折叠目标</li>
 						<li>.accordion:定义手风琴(需要data-parent="#accordionExample"搭配使用)</li>
+							<li>例题：</li>
+								<div class="container">
+									<div class="row accordion" id="accordion">
+										<div class="col-4">
+											<ul class="nav flex-column">
+												<li class="nav-item">
+													<a href="#" class="nav-link border border-success" data-toggle="collapse" data-target="#letter">letter</a>
+													<div class="list-group collapse" id="letter" data-parent="#accordion">
+														<a href="#" class="list-group-item list-group-item-action list-group-item-info">a</a>
+														<a href="#" class="list-group-item list-group-item-action list-group-item-success">b</a>
+														<a href="#" class="list-group-item list-group-item-action list-group-item-secondary">c</a>
+													</div>
+												</li>
+												<li class="nav-item mt-1">
+													<a href="#" class="nav-link border border-success" data-toggle="collapse" data-target="#number">number</a>
+													<div class="list-group collapse" id="number" data-parent="#accordion">
+														<a href="#" class="list-group-item list-group-item-action list-group-item-info">1</a>
+														<a href="#" class="list-group-item list-group-item-action list-group-item-success">2</a>
+														<a href="#" class="list-group-item list-group-item-action list-group-item-secondary">3</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 					</ul>
 				<li id="h4">进度条</li>
 				<li id="h4">滚动监听</li>
